@@ -3,20 +3,25 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function Header({ locale }: { locale: Locale }) {
   const t = useTranslations("nav");
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const links: { href: string; label: string }[] = [
-    { href: "#about", label: t("about") },
-    { href: "#services", label: t("services") },
-    { href: "#why-us", label: t("whyUs") },
-    { href: "#contact", label: t("contact") },
+    { href: "/", label: t("home") },
+    { href: "/about", label: t("about") },
+    { href: "/services", label: t("services") },
+    { href: "/why-us", label: t("whyUs") },
+    { href: "/contact", label: t("contact") },
   ];
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur dark:border-navy-800 dark:bg-navy-950/90">
@@ -28,22 +33,32 @@ export default function Header({ locale }: { locale: Locale }) {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium text-navy-600 dark:text-navy-200 lg:flex">
+        <nav className="hidden items-center gap-1 text-sm font-medium lg:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="transition-colors hover:text-gold-500">
+            <Link
+              key={link.href}
+              href={link.href}
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`rounded-full px-3.5 py-2 transition-colors ${
+                isActive(link.href)
+                  ? "bg-navy-50 text-navy-900 dark:bg-navy-900 dark:text-white"
+                  : "text-navy-600 hover:bg-navy-50 hover:text-navy-900 dark:text-navy-300 dark:hover:bg-navy-900 dark:hover:text-white"
+              }`}
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeSwitcher />
           <LanguageSwitcher locale={locale} />
-          <a
-            href="#booking"
+          <Link
+            href="/booking"
             className="rounded-full bg-gold-400 px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm transition-colors hover:bg-gold-300"
           >
             {t("booking")}
-          </a>
+          </Link>
         </div>
 
         <button
@@ -61,21 +76,32 @@ export default function Header({ locale }: { locale: Locale }) {
 
       {open && (
         <div className="border-t border-navy-100 bg-white px-4 py-4 dark:border-navy-800 dark:bg-navy-950 lg:hidden">
-          <nav className="flex flex-col gap-3 text-sm font-medium text-navy-600 dark:text-navy-200">
+          <nav className="flex flex-col gap-1 text-sm font-medium">
             {links.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`rounded-lg px-3 py-2.5 transition-colors ${
+                  isActive(link.href)
+                    ? "bg-navy-50 text-navy-900 dark:bg-navy-900 dark:text-white"
+                    : "text-navy-600 dark:text-navy-300"
+                }`}
+              >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#booking"
+            <Link
+              href="/booking"
               onClick={() => setOpen(false)}
-              className="w-fit rounded-full bg-gold-400 px-4 py-2 font-semibold text-navy-900"
+              className="mt-2 w-fit rounded-full bg-gold-400 px-4 py-2 font-semibold text-navy-900"
             >
               {t("booking")}
-            </a>
+            </Link>
           </nav>
-          <div className="mt-4">
+          <div className="mt-4 flex items-center gap-2">
+            <ThemeSwitcher />
             <LanguageSwitcher locale={locale} />
           </div>
         </div>

@@ -11,7 +11,7 @@ export default async function About() {
   ] as const;
 
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div className="relative mx-auto w-full max-w-sm lg:mx-0">
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-100 via-white to-lime-100 dark:from-navy-900 dark:via-navy-950 dark:to-navy-900" />
@@ -22,13 +22,10 @@ export default async function About() {
 
         <div>
           <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
-            {t("title")}
-          </span>
-          <h2 className="mt-2 text-2xl font-extrabold text-navy-800 dark:text-white sm:text-3xl">
             {t("subtitle")}
-          </h2>
+          </span>
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {cards.map(({ key, icon: Icon, accent }) => (
               <div
                 key={key}

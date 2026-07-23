@@ -7,6 +7,7 @@ import "../globals.css";
 import { locales, localeDirections, type Locale } from "@/i18n/routing";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -78,13 +79,16 @@ export default async function LocaleLayout({
       lang={locale}
       dir={direction}
       className={`${vazirmatn.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <NextIntlClientProvider>
-          <Header locale={locale as Locale} />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NextIntlClientProvider>
+            <Header locale={locale as Locale} />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

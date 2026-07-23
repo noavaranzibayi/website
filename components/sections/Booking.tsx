@@ -6,7 +6,7 @@ import { CalendarCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react"
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function Booking() {
+export default function Booking({ showHeading = true }: { showHeading?: boolean } = {}) {
   const t = useTranslations("booking");
   const tServices = useTranslations("services");
   const locale = useLocale();
@@ -46,7 +46,7 @@ export default function Booking() {
     "rounded-xl border border-navy-200 bg-navy-50/40 px-3.5 py-2.5 text-navy-900 outline-none transition-colors focus:border-gold-400 focus:bg-white focus:ring-4 focus:ring-gold-100 dark:border-navy-700 dark:bg-navy-900 dark:text-white dark:focus:ring-gold-900/30";
 
   return (
-    <section id="booking" className="relative overflow-hidden bg-navy-950 py-20 sm:py-28">
+    <section className="relative overflow-hidden bg-navy-950 py-20 sm:py-28">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
         style={{
@@ -58,14 +58,20 @@ export default function Booking() {
       <div className="absolute -bottom-16 end-1/4 h-72 w-72 rounded-full bg-gold-400/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
-          <div className="text-white">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-gold-200 ring-1 ring-white/15">
-              <CalendarCheck className="h-4 w-4" />
-              {t("subtitle")}
-            </span>
-            <h2 className="mt-5 text-2xl font-extrabold sm:text-3xl">{t("title")}</h2>
-          </div>
+        <div
+          className={`grid gap-10 lg:items-center lg:gap-16 ${
+            showHeading ? "lg:grid-cols-[0.85fr_1.15fr]" : "mx-auto max-w-xl"
+          }`}
+        >
+          {showHeading && (
+            <div className="text-white">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-gold-200 ring-1 ring-white/15">
+                <CalendarCheck className="h-4 w-4" />
+                {t("subtitle")}
+              </span>
+              <h2 className="mt-5 text-2xl font-extrabold sm:text-3xl">{t("title")}</h2>
+            </div>
+          )}
 
           <form
             onSubmit={handleSubmit}

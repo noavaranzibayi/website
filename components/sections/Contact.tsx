@@ -31,18 +31,12 @@ export default async function Contact() {
   ];
 
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-      <div className="max-w-2xl">
-        <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
-          {t("quickContact")}
-        </span>
-        <h2 className="mt-2 text-2xl font-extrabold text-navy-800 dark:text-white sm:text-3xl">
-          {t("title")}
-        </h2>
-        <p className="mt-3 text-navy-600 dark:text-navy-300">{t("subtitle")}</p>
-      </div>
+    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
+        {t("quickContact")}
+      </span>
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {rows.map((row) => {
           const Icon = row.icon;
           const content = (

@@ -1,11 +1,11 @@
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
+import AboutTeaser from "@/components/sections/AboutTeaser";
 import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
-import Booking from "@/components/sections/Booking";
-import Contact from "@/components/sections/Contact";
+import CtaBanner from "@/components/sections/CtaBanner";
+import ContactTeaser from "@/components/sections/ContactTeaser";
 
 export default async function HomePage({
   params,
@@ -18,11 +18,11 @@ export default async function HomePage({
   return (
     <>
       <Hero />
-      <About />
-      <Services />
+      <AboutTeaser />
+      <Services limit={8} showViewAll showNote={false} />
       <WhyUs />
-      <Booking />
-      <Contact />
+      <CtaBanner />
+      <ContactTeaser />
     </>
   );
 }

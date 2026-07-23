@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Sparkles, Droplets, Scissors, Zap, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { LucideIcon } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 type Slide = { id: string; tag: string; title: string; subtitle: string };
 
@@ -112,18 +113,18 @@ export default function Hero() {
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
-                    <a
-                      href="#services"
+                    <Link
+                      href="/services"
                       className="rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-navy-900 shadow-lg shadow-gold-900/20 transition-transform hover:scale-[1.03] hover:bg-gold-300"
                     >
                       {t("ctaServices")}
-                    </a>
-                    <a
-                      href="#booking"
+                    </Link>
+                    <Link
+                      href="/booking"
                       className="rounded-full bg-white/10 px-6 py-3 text-sm font-semibold text-white ring-1 ring-white/25 backdrop-blur transition-colors hover:bg-white/20"
                     >
                       {t("ctaBooking")}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

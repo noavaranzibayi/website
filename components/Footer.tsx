@@ -1,16 +1,18 @@
 import Image from "next/image";
 import { Phone, MapPin, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import InstagramIcon from "./icons/InstagramIcon";
 
 export default async function Footer() {
   const t = await getTranslations();
 
   const links = [
-    { href: "#about", label: t("nav.about") },
-    { href: "#services", label: t("nav.services") },
-    { href: "#why-us", label: t("nav.whyUs") },
-    { href: "#contact", label: t("nav.contact") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/services", label: t("nav.services") },
+    { href: "/why-us", label: t("nav.whyUs") },
+    { href: "/contact", label: t("nav.contact") },
+    { href: "/booking", label: t("nav.booking") },
   ];
 
   const contactRows = [
@@ -36,9 +38,9 @@ export default async function Footer() {
           <ul className="mt-4 flex flex-col gap-3 text-sm text-navy-200">
             {links.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-gold-300">
+                <Link href={link.href} className="transition-colors hover:text-gold-300">
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

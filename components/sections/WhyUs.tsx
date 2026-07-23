@@ -4,23 +4,25 @@ import { WHY_US_ICONS } from "@/lib/content-icons";
 
 type WhyItem = { id: string; title: string; text: string };
 
-export default async function WhyUs() {
+export default async function WhyUs({ showHeading = true }: { showHeading?: boolean } = {}) {
   const t = await getTranslations("whyUs");
   const items = t.raw("items") as WhyItem[];
 
   return (
-    <section id="why-us" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-      <div className="max-w-2xl">
-        <span className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold-500">
-          <ShieldCheck className="h-4 w-4" />
-          {t("title")}
-        </span>
-        <h2 className="mt-2 text-2xl font-extrabold text-navy-800 dark:text-white sm:text-3xl">
-          {t("subtitle")}
-        </h2>
-      </div>
+    <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      {showHeading && (
+        <div className="max-w-2xl">
+          <span className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold-500">
+            <ShieldCheck className="h-4 w-4" />
+            {t("title")}
+          </span>
+          <h2 className="mt-2 text-2xl font-extrabold text-navy-800 dark:text-white sm:text-3xl">
+            {t("subtitle")}
+          </h2>
+        </div>
+      )}
 
-      <div className="mt-10 grid gap-6 sm:grid-cols-3">
+      <div className={`grid gap-6 sm:grid-cols-3 ${showHeading ? "mt-10" : ""}`}>
         {items.map((item, i) => {
           const Icon = WHY_US_ICONS[item.id] ?? ShieldCheck;
           return (

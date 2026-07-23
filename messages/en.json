@@ -170,5 +170,27 @@
   "footer": {
     "tagline": "Natural beauty, through a scientific approach and precise care",
     "rights": "All rights reserved for Noavaran Zibayi Clinic."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "viewAllServices": "View All Services",
+    "viewAll": "View All",
+    "bookNow": "Book Now",
+    "getConsultation": "Get a Consultation",
+    "backToHome": "Back to Home"
+  },
+  "home": {
+    "aboutEyebrow": "A little about us",
+    "servicesEyebrow": "Specialized Services",
+    "whyUsEyebrow": "Why choose us",
+    "ctaTitle": "Ready to start your beauty journey?",
+    "ctaSubtitle": "Book a consultation now and let us design the right treatment plan for you.",
+    "contactEyebrow": "Reach us anytime"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "label": "Theme"
   }
 }
