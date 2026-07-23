@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #17253a;
+
+  /* Brand palette, derived from the clinic logo (navy) plus gold & lime accents */
+  --color-navy-50: #eef3f8;
+  --color-navy-100: #d3e0ec;
+  --color-navy-200: #a7c1d9;
+  --color-navy-300: #7ba2c6;
+  --color-navy-400: #3f6f9c;
+  --color-navy-500: #16416f;
+  --color-navy-600: #0e3863;
+  --color-navy-700: #0c2d50;
+  --color-navy-800: #0a2340;
+  --color-navy-900: #071930;
+
+  --color-gold-50: #fbf6e9;
+  --color-gold-100: #f5e9c3;
+  --color-gold-200: #ecd58f;
+  --color-gold-300: #e2c05c;
+  --color-gold-400: #d3a933;
+  --color-gold-500: #b98f22;
+  --color-gold-600: #96721b;
+  --color-gold-700: #735716;
+
+  --color-lime-50: #f4f9e5;
+  --color-lime-100: #e4f1bf;
+  --color-lime-200: #cbe38a;
+  --color-lime-300: #aed155;
+  --color-lime-400: #92bd31;
+  --color-lime-500: #77a022;
+  --color-lime-600: #5e7f1b;
+  --color-lime-700: #486315;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-navy-50: var(--color-navy-50);
+  --color-navy-100: var(--color-navy-100);
+  --color-navy-200: var(--color-navy-200);
+  --color-navy-300: var(--color-navy-300);
+  --color-navy-400: var(--color-navy-400);
+  --color-navy-500: var(--color-navy-500);
+  --color-navy-600: var(--color-navy-600);
+  --color-navy-700: var(--color-navy-700);
+  --color-navy-800: var(--color-navy-800);
+  --color-navy-900: var(--color-navy-900);
+
+  --color-gold-50: var(--color-gold-50);
+  --color-gold-100: var(--color-gold-100);
+  --color-gold-200: var(--color-gold-200);
+  --color-gold-300: var(--color-gold-300);
+  --color-gold-400: var(--color-gold-400);
+  --color-gold-500: var(--color-gold-500);
+  --color-gold-600: var(--color-gold-600);
+  --color-gold-700: var(--color-gold-700);
+
+  --color-lime-50: var(--color-lime-50);
+  --color-lime-100: var(--color-lime-100);
+  --color-lime-200: var(--color-lime-200);
+  --color-lime-300: var(--color-lime-300);
+  --color-lime-400: var(--color-lime-400);
+  --color-lime-500: var(--color-lime-500);
+  --color-lime-600: var(--color-lime-600);
+  --color-lime-700: var(--color-lime-700);
+
+  --font-sans: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a1120;
+    --foreground: #eef3f8;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+[dir="rtl"] .flip-rtl {
+  transform: scaleX(-1);
+}

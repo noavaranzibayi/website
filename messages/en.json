@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "title": "Noavaran Zibayi | Skin, Hair & Laser Clinic",
+    "description": "Noavaran Zibayi — natural beauty through a scientific approach and precise skin, hair, and laser care."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "whyUs": "Why Us",
+    "contact": "Contact",
+    "booking": "Consultation & Booking"
+  },
+  "hero": {
+    "kicker": "Specialized Skin, Hair & Laser Clinic",
+    "ctaServices": "View Services",
+    "ctaBooking": "Consultation & Booking",
+    "bullets": [
+      "Up-to-date methods",
+      "A precise, professional approach",
+      "Support until you reach your results"
+    ],
+    "slides": [
+      {
+        "id": "brand",
+        "tag": "Noavaran Zibayi",
+        "title": "Natural beauty, through a scientific approach and precise care",
+        "subtitle": "Noavaran Zibayi focuses on enhancing your appearance and beauty, offering the best solutions and modern methods for your care."
+      },
+      {
+        "id": "skin",
+        "tag": "Skin",
+        "title": "Skin rejuvenation and radiance with world-class methods",
+        "subtitle": "Specialized skin care with advanced equipment and a treatment plan tailored to every individual."
+      },
+      {
+        "id": "hair",
+        "tag": "Hair",
+        "title": "Natural hair transplants with lasting results",
+        "subtitle": "Our expert hair and beard transplant team is with you from the first consultation through aftercare."
+      },
+      {
+        "id": "laser",
+        "tag": "Laser",
+        "title": "Laser treatments and body contouring, done safely",
+        "subtitle": "Hair removal and targeted fat reduction with the latest devices and a trained clinical team."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Noavaran Zibayi",
+    "subtitle": "A summary of our vision and our path",
+    "goal": {
+      "title": "Our Goal",
+      "text": "We help you reach the best version of your own beauty — natural, balanced, and suited to your face — by choosing the right solutions and following a principled approach."
+    },
+    "method": {
+      "title": "Our Approach",
+      "text": "Using modern methods and specialized equipment, go through your beauty and improvement journey with confidence and transparency."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "A summary of our popular, specialized services",
+    "note": "To choose the best service for your needs, we recommend getting a consultation before proceeding.",
+    "items": [
+      {
+        "id": "hair-transplant",
+        "title": "Hair Transplant"
+      },
+      {
+        "id": "carboxytherapy",
+        "title": "Carboxytherapy"
+      },
+      {
+        "id": "microneedling",
+        "title": "Microneedling"
+      },
+      {
+        "id": "lipomatic-abdominal",
+        "title": "Liposmatic & Abdominal Procedures"
+      },
+      {
+        "id": "rhinoplasty",
+        "title": "Rhinoplasty"
+      },
+      {
+        "id": "hair-beard-transplant",
+        "title": "Hair & Beard Transplant"
+      },
+      {
+        "id": "skin-rejuvenation",
+        "title": "Skin Rejuvenation"
+      },
+      {
+        "id": "weight-loss",
+        "title": "Weight Loss"
+      },
+      {
+        "id": "mesotherapy",
+        "title": "Mesotherapy"
+      },
+      {
+        "id": "abdominoplasty",
+        "title": "Abdominoplasty"
+      },
+      {
+        "id": "laser",
+        "title": "Laser"
+      },
+      {
+        "id": "cosmetic-surgery",
+        "title": "Cosmetic Surgery"
+      },
+      {
+        "id": "face-lift",
+        "title": "Face Lift"
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "Why Noavaran Zibayi?",
+    "subtitle": "A few simple reasons to trust us",
+    "items": [
+      {
+        "id": "experience",
+        "title": "Experience & Expertise",
+        "text": "Services focused on results, safety, and patient satisfaction."
+      },
+      {
+        "id": "innovation",
+        "title": "Innovative Solutions",
+        "text": "Use of modern methods and today's specialized equipment."
+      },
+      {
+        "id": "consultation",
+        "title": "Transparent Consultation",
+        "text": "Clear explanation of the treatment path, realistic expectations, and step-by-step support."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Consultation & Appointment Booking",
+    "subtitle": "One step away from starting your transformation",
+    "form": {
+      "name": "Full name",
+      "phone": "Phone number",
+      "service": "Service of interest",
+      "servicePlaceholder": "Choose a service",
+      "message": "Message (optional)",
+      "submit": "Send Request",
+      "submitting": "Sending...",
+      "success": "Your request has been submitted successfully. We will contact you soon.",
+      "error": "Sorry, something went wrong while sending your request. Please try again."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "For consultation, booking an appointment, or information, reach us through the following channels.",
+    "quickContact": "Quick Contact",
+    "instagram": "Instagram",
+    "phone": "Phone",
+    "phoneValue": "051-3232",
+    "address": "Address",
+    "addressValue": "Mashhad — between Sajjad 2 & 4",
+    "email": "Email",
+    "emailValue": "info@noavaranzibayi.com",
+    "instagramValue": "@noavaran_zibayi"
+  },
+  "footer": {
+    "tagline": "Natural beauty, through a scientific approach and precise care",
+    "rights": "All rights reserved for Noavaran Zibayi Clinic."
+  }
+}
