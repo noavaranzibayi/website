@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { CalendarCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -11,7 +12,7 @@ export default function Booking() {
   const locale = useLocale();
   const [status, setStatus] = useState<Status>("idle");
 
-  const services = tServices.raw("items") as { icon: string; title: string }[];
+  const services = tServices.raw("items") as { id: string; title: string }[];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,53 +42,55 @@ export default function Booking() {
     }
   }
 
+  const inputClass =
+    "rounded-xl border border-navy-200 bg-navy-50/40 px-3.5 py-2.5 text-navy-900 outline-none transition-colors focus:border-gold-400 focus:bg-white focus:ring-4 focus:ring-gold-100 dark:border-navy-700 dark:bg-navy-900 dark:text-white dark:focus:ring-gold-900/30";
+
   return (
-    <section
-      id="booking"
-      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24"
-    >
-      <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 shadow-xl">
-        <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-2 lg:gap-12 lg:p-14">
+    <section id="booking" className="relative overflow-hidden bg-navy-950 py-20 sm:py-28">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: "radial-gradient(circle, #ffffff 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+      <div className="absolute -top-10 start-1/3 h-72 w-72 rounded-full bg-lime-400/10 blur-3xl" />
+      <div className="absolute -bottom-16 end-1/4 h-72 w-72 rounded-full bg-gold-400/10 blur-3xl" />
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
           <div className="text-white">
-            <h2 className="text-2xl font-bold sm:text-3xl">{t("title")}</h2>
-            <p className="mt-3 max-w-md text-navy-100">{t("subtitle")}</p>
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-gold-200 ring-1 ring-white/15">
+              <CalendarCheck className="h-4 w-4" />
+              {t("subtitle")}
+            </span>
+            <h2 className="mt-5 text-2xl font-extrabold sm:text-3xl">{t("title")}</h2>
           </div>
 
-          <form onSubmit={handleSubmit} className="grid gap-4 rounded-2xl bg-white p-6 shadow-lg dark:bg-navy-950 sm:p-8">
+          <form
+            onSubmit={handleSubmit}
+            className="grid gap-4 rounded-3xl bg-white p-6 shadow-2xl dark:bg-navy-900 sm:p-8"
+          >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="flex flex-col gap-1.5 text-sm font-medium text-navy-700 dark:text-navy-200">
                 {t("form.name")}
-                <input
-                  name="name"
-                  type="text"
-                  required
-                  className="rounded-lg border border-navy-200 px-3 py-2 text-navy-900 outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-200 dark:border-navy-700 dark:bg-navy-900 dark:text-white"
-                />
+                <input name="name" type="text" required className={inputClass} />
               </label>
               <label className="flex flex-col gap-1.5 text-sm font-medium text-navy-700 dark:text-navy-200">
                 {t("form.phone")}
-                <input
-                  name="phone"
-                  type="tel"
-                  required
-                  className="rounded-lg border border-navy-200 px-3 py-2 text-navy-900 outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-200 dark:border-navy-700 dark:bg-navy-900 dark:text-white"
-                />
+                <input name="phone" type="tel" required dir="ltr" className={inputClass} />
               </label>
             </div>
 
             <label className="flex flex-col gap-1.5 text-sm font-medium text-navy-700 dark:text-navy-200">
               {t("form.service")}
-              <select
-                name="service"
-                defaultValue=""
-                className="rounded-lg border border-navy-200 px-3 py-2 text-navy-900 outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-200 dark:border-navy-700 dark:bg-navy-900 dark:text-white"
-              >
+              <select name="service" defaultValue="" className={inputClass}>
                 <option value="" disabled>
                   {t("form.servicePlaceholder")}
                 </option>
                 {services.map((s) => (
-                  <option key={s.title} value={s.title}>
-                    {s.icon} {s.title}
+                  <option key={s.id} value={s.title}>
+                    {s.title}
                   </option>
                 ))}
               </select>
@@ -95,28 +98,27 @@ export default function Booking() {
 
             <label className="flex flex-col gap-1.5 text-sm font-medium text-navy-700 dark:text-navy-200">
               {t("form.message")}
-              <textarea
-                name="message"
-                rows={3}
-                className="rounded-lg border border-navy-200 px-3 py-2 text-navy-900 outline-none focus:border-gold-400 focus:ring-2 focus:ring-gold-200 dark:border-navy-700 dark:bg-navy-900 dark:text-white"
-              />
+              <textarea name="message" rows={3} className={inputClass} />
             </label>
 
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="mt-2 rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-navy-900 shadow-md transition-colors hover:bg-gold-300 disabled:cursor-not-allowed disabled:opacity-70"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-gold-400 px-6 py-3 text-sm font-semibold text-navy-900 shadow-md transition-all hover:scale-[1.01] hover:bg-gold-300 disabled:cursor-not-allowed disabled:opacity-70"
             >
+              {status === "submitting" && <Loader2 className="h-4 w-4 animate-spin" />}
               {status === "submitting" ? t("form.submitting") : t("form.submit")}
             </button>
 
             {status === "success" && (
-              <p className="rounded-lg bg-lime-50 px-4 py-3 text-sm font-medium text-lime-700">
+              <p className="flex items-center gap-2 rounded-xl bg-lime-50 px-4 py-3 text-sm font-medium text-lime-700">
+                <CheckCircle2 className="h-4 w-4 shrink-0" />
                 {t("form.success")}
               </p>
             )}
             {status === "error" && (
-              <p className="rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+              <p className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                <AlertCircle className="h-4 w-4 shrink-0" />
                 {t("form.error")}
               </p>
             )}

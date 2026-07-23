@@ -15,6 +15,7 @@
   --color-navy-700: #0c2d50;
   --color-navy-800: #0a2340;
   --color-navy-900: #071930;
+  --color-navy-950: #040f20;
 
   --color-gold-50: #fbf6e9;
   --color-gold-100: #f5e9c3;
@@ -24,6 +25,8 @@
   --color-gold-500: #b98f22;
   --color-gold-600: #96721b;
   --color-gold-700: #735716;
+  --color-gold-800: #5a4412;
+  --color-gold-900: #40310d;
 
   --color-lime-50: #f4f9e5;
   --color-lime-100: #e4f1bf;
@@ -33,6 +36,8 @@
   --color-lime-500: #77a022;
   --color-lime-600: #5e7f1b;
   --color-lime-700: #486315;
+  --color-lime-800: #384c10;
+  --color-lime-900: #a99e21;
 }
 
 @theme inline {
@@ -49,6 +54,7 @@
   --color-navy-700: var(--color-navy-700);
   --color-navy-800: var(--color-navy-800);
   --color-navy-900: var(--color-navy-900);
+  --color-navy-950: var(--color-navy-950);
 
   --color-gold-50: var(--color-gold-50);
   --color-gold-100: var(--color-gold-100);
@@ -58,6 +64,8 @@
   --color-gold-500: var(--color-gold-500);
   --color-gold-600: var(--color-gold-600);
   --color-gold-700: var(--color-gold-700);
+  --color-gold-800: var(--color-gold-800);
+  --color-gold-900: var(--color-gold-900);
 
   --color-lime-50: var(--color-lime-50);
   --color-lime-100: var(--color-lime-100);
@@ -67,6 +75,8 @@
   --color-lime-500: var(--color-lime-500);
   --color-lime-600: var(--color-lime-600);
   --color-lime-700: var(--color-lime-700);
+  --color-lime-800: var(--color-lime-800);
+  --color-lime-900: var(--color-lime-900);
 
   --font-sans: var(--font-body);
 }

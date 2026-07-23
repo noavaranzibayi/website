@@ -1,10 +1,18 @@
-import { Phone, MapPin, Mail, Instagram, type LucideIcon } from "lucide-react";
+import { Phone, MapPin, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import InstagramIcon from "@/components/icons/InstagramIcon";
+import type { ComponentType, SVGProps } from "react";
 
 export default async function Contact() {
   const t = await getTranslations("contact");
 
-  const rows: { key: string; icon: LucideIcon; value: string; href?: string; external?: boolean }[] = [
+  const rows: {
+    key: string;
+    icon: ComponentType<SVGProps<SVGSVGElement>>;
+    value: string;
+    href?: string;
+    external?: boolean;
+  }[] = [
     {
       key: "phone",
       icon: Phone,
@@ -15,7 +23,7 @@ export default async function Contact() {
     { key: "email", icon: Mail, value: t("emailValue"), href: `mailto:${t("emailValue")}` },
     {
       key: "instagram",
-      icon: Instagram,
+      icon: InstagramIcon,
       value: t("instagramValue"),
       href: `https://instagram.com/${t("instagramValue").replace("@", "")}`,
       external: true,

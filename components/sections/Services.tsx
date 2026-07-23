@@ -42,7 +42,7 @@ export default async function Services() {
                 key={item.id}
                 className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center backdrop-blur transition-all hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/[0.08]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-gold-400/20 to-lime-400/20 text-gold-300 transition-colors group-hover:from-gold-400 group-hover:to-gold-300 group-hover:text-navy-900">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-400/15 text-gold-300 ring-1 ring-gold-400/30 transition-colors group-hover:bg-gold-400 group-hover:text-navy-900 group-hover:ring-gold-400">
                   <Icon className="h-5 w-5" />
                 </span>
                 <span className="text-sm font-semibold text-white">{item.title}</span>
