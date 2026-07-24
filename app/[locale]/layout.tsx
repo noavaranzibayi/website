@@ -5,9 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { locales, localeDirections, type Locale } from "@/i18n/routing";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import ThemeProvider from "@/components/ThemeProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -84,9 +83,8 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
           <NextIntlClientProvider>
-            <Header locale={locale as Locale} />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            {children}
+            <Toaster />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

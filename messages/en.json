@@ -192,5 +192,502 @@
     "dark": "Dark",
     "system": "System",
     "label": "Theme"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in to your account",
+      "subtitle": "Sign in to access your panel",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "Remember me",
+      "forgotPasswordLink": "Forgot your password?",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Sign up",
+      "accountDisabledNotice": "Your account is disabled. Please contact support for more information.",
+      "resendVerification": "Resend verification email",
+      "errors": {
+        "invalidCredentials": "Incorrect email or password.",
+        "accountLocked": "Your account is temporarily locked due to repeated failed attempts. Please try again later.",
+        "accountSuspended": "Your account has been temporarily suspended.",
+        "accountBlocked": "Access to this account has been blocked.",
+        "accountInactive": "This account is inactive.",
+        "emailNotVerified": "Your email hasn't been verified yet. Please check your inbox.",
+        "rateLimited": "Too many attempts. Please try again in a few minutes.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "register": {
+      "title": "Create an account",
+      "subtitle": "Sign up to book appointments and track your requests",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your full name",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone number",
+      "phonePlaceholder": "e.g. 09xxxxxxxxx",
+      "passwordLabel": "Password",
+      "passwordHint": "At least 8 characters, including a letter and a number",
+      "confirmPasswordLabel": "Confirm password",
+      "submit": "Sign up",
+      "submitting": "Signing up...",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "successTitle": "Registration successful",
+      "successDescription": "We've sent a verification email to your address. Please check your inbox (or spam folder).",
+      "errors": {
+        "emailTaken": "This email is already registered.",
+        "passwordMismatch": "Passwords do not match.",
+        "weakPassword": "Password must be at least 8 characters and include a letter and a number.",
+        "invalidPhone": "Phone number is not valid.",
+        "rateLimited": "Too many requests. Please try again later.",
+        "generic": "Something went wrong during sign up. Please try again."
+      }
+    },
+    "forgotPassword": {
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a reset link",
+      "emailLabel": "Email",
+      "submit": "Send reset link",
+      "submitting": "Sending...",
+      "backToLogin": "Back to sign in",
+      "successTitle": "Email sent",
+      "successDescription": "If an account exists for this email, a password reset link has been sent.",
+      "rateLimited": "Too many requests. Please try again later."
+    },
+    "resetPassword": {
+      "title": "Set a new password",
+      "subtitle": "Choose a new password for your account",
+      "passwordLabel": "New password",
+      "confirmPasswordLabel": "Confirm new password",
+      "submit": "Change password",
+      "submitting": "Saving...",
+      "invalidTokenTitle": "Invalid or expired link",
+      "invalidTokenDescription": "This password reset link is no longer valid. You can request a new one.",
+      "requestNewLink": "Request a new link",
+      "successTitle": "Password changed successfully",
+      "successDescription": "You can now sign in with your new password.",
+      "goToLogin": "Sign in",
+      "errors": {
+        "passwordMismatch": "Passwords do not match.",
+        "weakPassword": "Password must be at least 8 characters and include a letter and a number.",
+        "generic": "Something went wrong. Please try again."
+      }
+    },
+    "verifyEmail": {
+      "title": "Verify email",
+      "verifying": "Verifying your link...",
+      "successTitle": "Your email has been verified",
+      "successDescription": "Your account is now active. You can sign in.",
+      "invalidTokenTitle": "Invalid or expired link",
+      "invalidTokenDescription": "This email verification link is no longer valid.",
+      "goToLogin": "Sign in",
+      "resendTitle": "Get a new verification email",
+      "resendEmailLabel": "Email",
+      "resendSubmit": "Resend",
+      "resendSubmitting": "Sending...",
+      "resendSuccess": "If an account exists for this email and isn't verified yet, a new verification email has been sent.",
+      "resendRateLimited": "Too many requests. Please try again later."
+    },
+    "validation": {
+      "required": "This field is required.",
+      "invalidEmail": "Enter a valid email address."
+    },
+    "backToSite": "Back to the site"
+  },
+  "panel": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "users": "Users",
+      "admins": "Admins",
+      "appointments": "Appointments",
+      "myAppointments": "My Appointments",
+      "roles": "Roles & Permissions",
+      "auditLog": "Activity Log",
+      "notifications": "Notifications",
+      "profile": "My Profile",
+      "settings": "Settings",
+      "backToSite": "Back to site"
+    },
+    "header": {
+      "searchPlaceholder": "Search...",
+      "notifications": "Notifications",
+      "noNotifications": "You have no new notifications.",
+      "markAllRead": "Mark all as read",
+      "viewAll": "View all",
+      "profile": "Profile",
+      "logout": "Sign out",
+      "signedInAs": "Signed in as"
+    },
+    "sidebar": {
+      "collapse": "Collapse menu",
+      "expand": "Expand menu"
+    },
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "roleLabels": {
+      "SUPER_ADMIN": "Super Admin",
+      "ADMIN": "Admin",
+      "USER": "User"
+    },
+    "statusLabels": {
+      "ACTIVE": "Active",
+      "PENDING_VERIFICATION": "Pending Verification",
+      "SUSPENDED": "Suspended",
+      "BLOCKED": "Blocked",
+      "INACTIVE": "Inactive"
+    },
+    "table": {
+      "search": "Search",
+      "filters": "Filters",
+      "allRoles": "All roles",
+      "allStatuses": "All statuses",
+      "noResults": "No results found.",
+      "noResultsHint": "Try changing your filters or search term.",
+      "rowsPerPage": "Rows per page",
+      "page": "Page",
+      "of": "of",
+      "showingResults": "Showing {from}–{to} of {total}",
+      "selectedCount": "{count} selected",
+      "clearSelection": "Clear selection",
+      "sortBy": "Sort by",
+      "actions": "Actions"
+    },
+    "common": {
+      "save": "Save",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "view": "View",
+      "create": "Add",
+      "confirm": "Confirm",
+      "close": "Close",
+      "back": "Back",
+      "export": "Export",
+      "loading": "Loading...",
+      "yes": "Yes",
+      "no": "No",
+      "success": "Done successfully.",
+      "error": "Something went wrong. Please try again.",
+      "unsavedChanges": "You have unsaved changes.",
+      "requiredField": "This field is required.",
+      "optional": "Optional"
+    },
+    "confirm": {
+      "deleteTitle": "Delete this?",
+      "deleteDescription": "This action cannot be undone.",
+      "genericTitle": "Are you sure?"
+    }
+  },
+  "errors": {
+    "403": {
+      "title": "Access Denied",
+      "description": "You don't have permission to view this page. If you think this is a mistake, contact your system administrator.",
+      "backToPanel": "Back to dashboard",
+      "backToSite": "Back to site"
+    },
+    "404": {
+      "title": "Page not found",
+      "description": "The page you're looking for doesn't exist or has been moved.",
+      "backToHome": "Back to home"
+    }
+  },
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "subtitle": "An overview of your system",
+    "stats": {
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "newUsers": "New Users (last 30 days)",
+      "totalAdmins": "Total Admins",
+      "pendingAppointments": "Pending Appointments",
+      "confirmedAppointments": "Confirmed Appointments",
+      "todayAppointments": "Today's Appointments",
+      "cancelledAppointments": "Cancelled Appointments"
+    },
+    "charts": {
+      "userGrowth": "User Growth",
+      "userGrowthSubtitle": "Last 30 days",
+      "appointmentStatus": "Appointment Status",
+      "appointmentStatusSubtitle": "Overall distribution"
+    },
+    "recentActivity": {
+      "title": "Recent Admin Activity",
+      "empty": "No activity recorded yet.",
+      "viewAll": "View full log"
+    },
+    "upcoming": {
+      "title": "Upcoming Appointments",
+      "empty": "No upcoming appointments.",
+      "viewAll": "View all appointments"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "addUser": "Add User",
+      "addAdmin": "Add Admin",
+      "manageAppointments": "Manage Appointments"
+    }
+  },
+  "users": {
+    "title": "User Management",
+    "subtitle": "View and manage user accounts",
+    "adminsTitle": "Admin Management",
+    "adminsSubtitle": "Manage Admin accounts and their permissions",
+    "searchPlaceholder": "Search by name, email, or phone...",
+    "columns": {
+      "user": "User",
+      "role": "Role",
+      "status": "Status",
+      "joined": "Joined",
+      "lastLogin": "Last login",
+      "actions": "Actions"
+    },
+    "neverLoggedIn": "Never logged in",
+    "addUser": "Add User",
+    "addAdmin": "Add Admin",
+    "createTitle": "Create new account",
+    "editTitle": "Edit user",
+    "detailsTitle": "User details",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone number",
+      "role": "Role",
+      "status": "Status",
+      "password": "Password",
+      "passwordHint": "Leave blank to keep the current password.",
+      "temporaryPassword": "Temporary password"
+    },
+    "actions": {
+      "viewDetails": "View details",
+      "edit": "Edit details",
+      "changeRole": "Change role",
+      "changeStatus": "Change status",
+      "activate": "Activate",
+      "suspend": "Suspend",
+      "block": "Block",
+      "sendResetLink": "Send password reset link",
+      "forceLogout": "Force logout everywhere",
+      "delete": "Delete user",
+      "exportCsv": "Export CSV",
+      "bulkActivate": "Bulk activate",
+      "bulkSuspend": "Bulk suspend",
+      "bulkDelete": "Bulk delete"
+    },
+    "confirm": {
+      "deleteTitle": "Delete this user?",
+      "deleteDescription": "This user and all related data will be deleted. This action cannot be undone.",
+      "forceLogoutTitle": "Force logout everywhere?",
+      "forceLogoutDescription": "All of this user's active sessions will be invalidated immediately.",
+      "resetLinkTitle": "Send password reset link?",
+      "resetLinkDescription": "An email with a password reset link will be sent to this user.",
+      "statusChangeTitle": "Change account status?",
+      "bulkDeleteTitle": "Delete {count} selected users?",
+      "cannotModifySuperAdmin": "The Super Admin account cannot be edited or deleted by a regular Admin."
+    },
+    "toast": {
+      "created": "User created successfully.",
+      "updated": "User details updated.",
+      "deleted": "User deleted.",
+      "roleChanged": "User role changed.",
+      "statusChanged": "Account status changed.",
+      "resetLinkSent": "Password reset link sent.",
+      "forcedLogout": "User signed out of all devices.",
+      "exported": "Export file is ready."
+    },
+    "tabs": {
+      "overview": "Overview",
+      "permissions": "Permissions",
+      "sessions": "Sessions",
+      "activity": "Activity history",
+      "appointments": "Appointments"
+    },
+    "permissionsOverride": {
+      "title": "Custom permissions",
+      "description": "In addition to the role's default permissions, you can grant or restrict specific permissions for this user.",
+      "default": "Role default",
+      "granted": "Allowed",
+      "denied": "Denied"
+    }
+  },
+  "appointments": {
+    "title": "Appointment Management",
+    "subtitle": "Review and manage appointment requests",
+    "myTitle": "My Appointments",
+    "mySubtitle": "Your submitted requests and appointment history",
+    "newRequest": "New Request",
+    "views": {
+      "list": "List view",
+      "calendar": "Calendar view"
+    },
+    "searchPlaceholder": "Search by subject, name, or phone...",
+    "columns": {
+      "subject": "Subject",
+      "requester": "Requester",
+      "date": "Date",
+      "type": "Type",
+      "assignee": "Assignee",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "unassigned": "Unassigned",
+    "type": {
+      "IN_PERSON": "In person",
+      "ONLINE": "Online",
+      "PHONE": "Phone"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "CONFIRMED": "Confirmed",
+      "RESCHEDULED": "Rescheduled",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "REJECTED": "Rejected",
+      "NO_SHOW": "No-show"
+    },
+    "form": {
+      "subject": "Subject",
+      "description": "Description",
+      "date": "Preferred date",
+      "time": "Preferred time",
+      "duration": "Duration (minutes)",
+      "type": "Meeting type",
+      "contactPhone": "Phone number",
+      "contactEmail": "Email (optional)",
+      "attachment": "Attachment (optional)",
+      "submit": "Submit request",
+      "submitting": "Submitting...",
+      "success": "Your request has been submitted. We'll let you know once it's reviewed."
+    },
+    "detail": {
+      "title": "Appointment details",
+      "requestedFor": "Requested time",
+      "confirmedFor": "Confirmed time",
+      "location": "Location",
+      "meetingLink": "Online meeting link",
+      "internalNotes": "Internal notes (admins only)",
+      "internalNotesPlaceholder": "A note only the admin team can see...",
+      "historyTitle": "Change history",
+      "messageToUser": "Message to the user"
+    },
+    "actions": {
+      "confirm": "Confirm",
+      "reject": "Reject",
+      "reschedule": "Propose a new time",
+      "assign": "Assign",
+      "complete": "Mark as completed",
+      "markNoShow": "Mark as no-show",
+      "cancel": "Cancel appointment",
+      "requestCancel": "Request cancellation",
+      "requestReschedule": "Request reschedule",
+      "save": "Save changes"
+    },
+    "confirm": {
+      "rejectTitle": "Reject this request?",
+      "rejectReasonLabel": "Reason for rejection (shown to the user)",
+      "cancelTitle": "Cancel this appointment?",
+      "cancelReasonLabel": "Reason for cancellation",
+      "conflictWarning": "This time slot overlaps with another confirmed appointment for the same assignee."
+    },
+    "toast": {
+      "created": "Appointment request submitted.",
+      "updated": "Appointment updated.",
+      "confirmed": "Appointment confirmed.",
+      "rejected": "Appointment rejected.",
+      "cancelled": "Appointment cancelled.",
+      "rescheduled": "Appointment rescheduled.",
+      "assigned": "Assignee set."
+    },
+    "empty": {
+      "title": "No appointments found",
+      "description": "No appointment requests have been submitted yet."
+    },
+    "guest": "Guest"
+  },
+  "roles": {
+    "title": "Roles & Permissions",
+    "subtitle": "Manage each role's permissions and per-admin overrides",
+    "modules": {
+      "DASHBOARD": "Dashboard",
+      "USERS": "Users",
+      "ADMINS": "Admins",
+      "ROLES": "Roles & Permissions",
+      "APPOINTMENTS": "Appointments",
+      "NOTIFICATIONS": "Notifications",
+      "AUDIT_LOG": "Activity Log",
+      "SETTINGS": "Settings"
+    },
+    "actionsLabels": {
+      "VIEW": "View",
+      "CREATE": "Create",
+      "EDIT": "Edit",
+      "DELETE": "Delete",
+      "APPROVE": "Approve",
+      "MANAGE": "Full manage",
+      "EXPORT": "Export"
+    },
+    "systemRoleNotice": "System roles (Super Admin, Admin, User) can't be deleted; only the Admin role's permissions can be edited.",
+    "saveMatrix": "Save permission changes",
+    "matrixSaved": "Permission matrix updated."
+  },
+  "auditLog": {
+    "title": "Activity Log",
+    "subtitle": "Full history of sensitive actions across the system",
+    "searchPlaceholder": "Search by user, action, or target...",
+    "columns": {
+      "time": "Time",
+      "actor": "Actor",
+      "action": "Action",
+      "target": "Target",
+      "ip": "IP address"
+    },
+    "system": "System",
+    "empty": "No events found."
+  },
+  "notifications": {
+    "title": "Notifications",
+    "subtitle": "Notifications about your account and appointments",
+    "empty": "No notifications.",
+    "markRead": "Mark as read",
+    "markAllRead": "Mark all as read"
+  },
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your account information and security",
+    "tabs": {
+      "overview": "Account info",
+      "security": "Security",
+      "sessions": "Active sessions"
+    },
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "phone": "Phone number",
+      "save": "Save changes"
+    },
+    "changePassword": {
+      "title": "Change password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "submit": "Change password",
+      "success": "Password changed successfully.",
+      "wrongCurrent": "Current password is incorrect."
+    },
+    "sessions": {
+      "title": "Active sessions",
+      "description": "Devices currently signed in to your account.",
+      "thisDevice": "This device",
+      "lastActive": "Last active",
+      "revoke": "End session",
+      "revokeAll": "Sign out everywhere",
+      "revokedToast": "Session ended.",
+      "revokeAllConfirmTitle": "Sign out everywhere?",
+      "revokeAllConfirmDescription": "You'll be signed out on every device except this one."
+    }
   }
 }

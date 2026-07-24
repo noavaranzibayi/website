@@ -1,7 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
+// Prisma schema — noavaranzibayi
+// learn more: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client"
@@ -12,20 +10,374 @@ datasource db {
   provider = "postgresql"
 }
 
+// ============================================================
+// Enums
+// ============================================================
+
 enum Locale {
   fa
   ar
   en
 }
 
-model BookingRequest {
-  id        String   @id @default(cuid())
-  name      String
-  phone     String
-  service   String?
-  message   String?
-  locale    Locale   @default(fa)
+enum RoleName {
+  SUPER_ADMIN
+  ADMIN
+  USER
+}
+
+enum UserStatus {
+  ACTIVE
+  PENDING_VERIFICATION
+  SUSPENDED
+  BLOCKED
+  INACTIVE
+}
+
+enum PermissionModule {
+  DASHBOARD
+  USERS
+  ADMINS
+  ROLES
+  APPOINTMENTS
+  NOTIFICATIONS
+  AUDIT_LOG
+  SETTINGS
+}
+
+enum PermissionAction {
+  VIEW
+  CREATE
+  EDIT
+  DELETE
+  APPROVE
+  MANAGE
+  EXPORT
+}
+
+enum AppointmentType {
+  IN_PERSON
+  ONLINE
+  PHONE
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  RESCHEDULED
+  COMPLETED
+  CANCELLED
+  REJECTED
+  NO_SHOW
+}
+
+enum NotificationType {
+  APPOINTMENT_CREATED
+  APPOINTMENT_CONFIRMED
+  APPOINTMENT_RESCHEDULED
+  APPOINTMENT_CANCELLED
+  APPOINTMENT_REJECTED
+  APPOINTMENT_COMPLETED
+  APPOINTMENT_REMINDER
+  ACCOUNT_STATUS_CHANGED
+  ROLE_CHANGED
+  SYSTEM
+}
+
+// ============================================================
+// Auth.js required models
+// ============================================================
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String    @id @default(cuid())
+  sessionToken String    @unique
+  userId       String
+  expires      DateTime
+  ip           String?
+  userAgent    String?
+  createdAt    DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// ============================================================
+// Users & RBAC
+// ============================================================
+
+model User {
+  id            String     @id @default(cuid())
+  name          String
+  email         String     @unique
+  emailVerified DateTime?
+  phone         String?
+  image         String?
+  passwordHash  String
+
+  role   RoleName   @default(USER)
+  status UserStatus @default(PENDING_VERIFICATION)
+  locale Locale     @default(fa)
+
+  lastLoginAt DateTime?
+  lastLoginIp String?
+
+  failedLoginCount Int       @default(0)
+  lockedUntil      DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  accounts    Account[]
+  sessions    Session[]
+  permissions UserPermission[]
+
+  appointments            Appointment[]        @relation("AppointmentOwner")
+  assignedAppointments    Appointment[]        @relation("AppointmentAssignee")
+  appointmentHistory      AppointmentHistory[]
+  notifications           Notification[]
+  auditLogs               AuditLog[]
+  passwordResetTokens     PasswordResetToken[]
+  emailVerificationTokens EmailVerificationToken[]
+
+  @@index([role])
+  @@index([status])
+  @@map("users")
+}
+
+model Role {
+  id          String   @id @default(cuid())
+  name        RoleName @unique
+  label       String
+  description String?
+  isSystem    Boolean  @default(true)
+
+  rolePermissions RolePermission[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("roles")
+}
+
+model Permission {
+  id     String            @id @default(cuid())
+  module PermissionModule
+  action PermissionAction
+
+  rolePermissions RolePermission[]
+  userPermissions UserPermission[]
+
+  @@unique([module, action])
+  @@map("permissions")
+}
+
+model RolePermission {
+  id           String   @id @default(cuid())
+  role         RoleName
+  roleRef      Role     @relation(fields: [role], references: [name], onDelete: Cascade)
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
   createdAt DateTime @default(now())
 
-  @@map("booking_requests")
+  @@unique([role, permissionId])
+  @@index([role])
+  @@map("role_permissions")
+}
+
+// Per-user permission overrides on top of their role's defaults.
+// granted = true  -> explicitly allow (even if role doesn't grant it)
+// granted = false -> explicitly deny (even if role grants it)
+model UserPermission {
+  id           String     @id @default(cuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  permissionId String
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+  granted      Boolean    @default(true)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, permissionId])
+  @@index([userId])
+  @@map("user_permissions")
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expires   DateTime
+  usedAt    DateTime?
+  requestIp String?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+  @@map("password_reset_tokens")
+}
+
+model EmailVerificationToken {
+  id        String    @id @default(cuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tokenHash String    @unique
+  expires   DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([userId])
+  @@map("email_verification_tokens")
+}
+
+// ============================================================
+// Appointments
+// ============================================================
+
+model Appointment {
+  id String @id @default(cuid())
+
+  // Null for guest requests submitted from the public marketing site
+  // (identified only by contactPhone/contactEmail below); set once the
+  // request is made from an authenticated user's panel.
+  userId String?
+  user   User?   @relation("AppointmentOwner", fields: [userId], references: [id], onDelete: Cascade)
+
+  subject     String
+  description String? @db.Text
+  serviceId   String?
+
+  requestedDate        DateTime
+  requestedDurationMin Int             @default(30)
+  type                 AppointmentType @default(IN_PERSON)
+
+  contactPhone  String
+  contactEmail  String?
+  attachmentUrl String?
+
+  status AppointmentStatus @default(PENDING)
+
+  confirmedDate        DateTime?
+  confirmedDurationMin Int?
+  location             String?
+  meetingLink          String?
+
+  assignedAdminId String?
+  assignedAdmin   User?   @relation("AppointmentAssignee", fields: [assignedAdminId], references: [id], onDelete: SetNull)
+
+  internalNotes String? @db.Text
+  cancelReason  String?
+  rejectReason  String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  history       AppointmentHistory[]
+  notifications Notification[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([requestedDate])
+  @@index([assignedAdminId])
+  @@map("appointments")
+}
+
+model AppointmentHistory {
+  id            String      @id @default(cuid())
+  appointmentId String
+  appointment   Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+
+  changedById String?
+  changedBy   User?   @relation(fields: [changedById], references: [id], onDelete: SetNull)
+
+  fromStatus AppointmentStatus?
+  toStatus   AppointmentStatus
+  note       String?
+
+  createdAt DateTime @default(now())
+
+  @@index([appointmentId])
+  @@map("appointment_history")
+}
+
+model Notification {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  type  NotificationType
+  title String
+  body  String
+
+  appointmentId String?
+  appointment   Appointment? @relation(fields: [appointmentId], references: [id], onDelete: SetNull)
+
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id String @id @default(cuid())
+
+  actorId String?
+  actor   User?   @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  action     String
+  targetType String
+  targetId   String?
+  metadata   Json?
+
+  ip        String?
+  userAgent String?
+
+  createdAt DateTime @default(now())
+
+  @@index([actorId])
+  @@index([targetType, targetId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+model RateLimitAttempt {
+  id        String   @id @default(cuid())
+  key       String
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+  @@map("rate_limit_attempts")
 }

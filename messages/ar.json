@@ -192,5 +192,502 @@
     "dark": "داكن",
     "system": "النظام",
     "label": "المظهر"
+  },
+  "auth": {
+    "login": {
+      "title": "تسجيل الدخول إلى حسابك",
+      "subtitle": "سجّل الدخول للوصول إلى لوحتك",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "كلمة المرور",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "تذكرني",
+      "forgotPasswordLink": "هل نسيت كلمة المرور؟",
+      "submit": "تسجيل الدخول",
+      "submitting": "جاري تسجيل الدخول...",
+      "noAccount": "ليس لديك حساب؟",
+      "registerLink": "أنشئ حساباً",
+      "accountDisabledNotice": "حسابك معطّل. يرجى التواصل مع الدعم لمزيد من المعلومات.",
+      "resendVerification": "إعادة إرسال بريد التأكيد",
+      "errors": {
+        "invalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+        "accountLocked": "تم قفل حسابك مؤقتاً بسبب محاولات فاشلة متكررة. يرجى المحاولة لاحقاً.",
+        "accountSuspended": "تم تعليق حسابك مؤقتاً.",
+        "accountBlocked": "تم حظر الوصول إلى هذا الحساب.",
+        "accountInactive": "هذا الحساب غير نشط.",
+        "emailNotVerified": "لم يتم تأكيد بريدك الإلكتروني بعد. يرجى مراجعة صندوق الوارد.",
+        "rateLimited": "عدد المحاولات تجاوز الحد المسموح. يرجى المحاولة بعد بضع دقائق.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      }
+    },
+    "register": {
+      "title": "إنشاء حساب جديد",
+      "subtitle": "سجّل لحجز المواعيد ومتابعة طلباتك",
+      "nameLabel": "الاسم الكامل",
+      "namePlaceholder": "اسمك الكامل",
+      "emailLabel": "البريد الإلكتروني",
+      "phoneLabel": "رقم الهاتف",
+      "phonePlaceholder": "مثال: 09xxxxxxxxx",
+      "passwordLabel": "كلمة المرور",
+      "passwordHint": "٨ أحرف على الأقل، تتضمن حرفاً ورقماً",
+      "confirmPasswordLabel": "تأكيد كلمة المرور",
+      "submit": "إنشاء الحساب",
+      "submitting": "جاري إنشاء الحساب...",
+      "haveAccount": "لديك حساب بالفعل؟",
+      "loginLink": "سجّل الدخول",
+      "successTitle": "تم إنشاء الحساب بنجاح",
+      "successDescription": "تم إرسال بريد إلكتروني لتأكيد حسابك. يرجى مراجعة صندوق الوارد (أو الرسائل غير المرغوبة).",
+      "errors": {
+        "emailTaken": "هذا البريد الإلكتروني مسجّل بالفعل.",
+        "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+        "weakPassword": "يجب أن تتكون كلمة المرور من ٨ أحرف على الأقل وتتضمن حرفاً ورقماً.",
+        "invalidPhone": "رقم الهاتف غير صالح.",
+        "rateLimited": "عدد الطلبات تجاوز الحد المسموح. يرجى المحاولة لاحقاً.",
+        "generic": "حدث خطأ أثناء إنشاء الحساب. يرجى المحاولة مرة أخرى."
+      }
+    },
+    "forgotPassword": {
+      "title": "استعادة كلمة المرور",
+      "subtitle": "أدخل بريدك الإلكتروني وسنرسل لك رابط الاستعادة",
+      "emailLabel": "البريد الإلكتروني",
+      "submit": "إرسال رابط الاستعادة",
+      "submitting": "جاري الإرسال...",
+      "backToLogin": "العودة إلى تسجيل الدخول",
+      "successTitle": "تم إرسال البريد الإلكتروني",
+      "successDescription": "إذا كان هناك حساب مرتبط بهذا البريد، فسيتم إرسال رابط استعادة كلمة المرور إليه.",
+      "rateLimited": "عدد الطلبات تجاوز الحد المسموح. يرجى المحاولة لاحقاً."
+    },
+    "resetPassword": {
+      "title": "تعيين كلمة مرور جديدة",
+      "subtitle": "اختر كلمة مرور جديدة لحسابك",
+      "passwordLabel": "كلمة المرور الجديدة",
+      "confirmPasswordLabel": "تأكيد كلمة المرور الجديدة",
+      "submit": "تغيير كلمة المرور",
+      "submitting": "جاري الحفظ...",
+      "invalidTokenTitle": "رابط غير صالح أو منتهي الصلاحية",
+      "invalidTokenDescription": "رابط استعادة كلمة المرور هذا لم يعد صالحاً. يمكنك طلب رابط جديد.",
+      "requestNewLink": "طلب رابط جديد",
+      "successTitle": "تم تغيير كلمة المرور بنجاح",
+      "successDescription": "يمكنك الآن تسجيل الدخول بكلمة المرور الجديدة.",
+      "goToLogin": "تسجيل الدخول",
+      "errors": {
+        "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+        "weakPassword": "يجب أن تتكون كلمة المرور من ٨ أحرف على الأقل وتتضمن حرفاً ورقماً.",
+        "generic": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+      }
+    },
+    "verifyEmail": {
+      "title": "تأكيد البريد الإلكتروني",
+      "verifying": "جاري التحقق من الرابط...",
+      "successTitle": "تم تأكيد بريدك الإلكتروني",
+      "successDescription": "تم تفعيل حسابك. يمكنك الآن تسجيل الدخول.",
+      "invalidTokenTitle": "رابط غير صالح أو منتهي الصلاحية",
+      "invalidTokenDescription": "رابط تأكيد البريد الإلكتروني هذا لم يعد صالحاً.",
+      "goToLogin": "تسجيل الدخول",
+      "resendTitle": "احصل على بريد تأكيد جديد",
+      "resendEmailLabel": "البريد الإلكتروني",
+      "resendSubmit": "إعادة الإرسال",
+      "resendSubmitting": "جاري الإرسال...",
+      "resendSuccess": "إذا كان هناك حساب مرتبط بهذا البريد ولم يتم تأكيده بعد، فسيتم إرسال بريد تأكيد جديد.",
+      "resendRateLimited": "عدد الطلبات تجاوز الحد المسموح. يرجى المحاولة لاحقاً."
+    },
+    "validation": {
+      "required": "هذا الحقل مطلوب.",
+      "invalidEmail": "أدخل بريداً إلكترونياً صالحاً."
+    },
+    "backToSite": "العودة إلى الموقع"
+  },
+  "panel": {
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "users": "المستخدمون",
+      "admins": "المدراء",
+      "appointments": "المواعيد",
+      "myAppointments": "مواعيدي",
+      "roles": "الأدوار والصلاحيات",
+      "auditLog": "سجل النشاطات",
+      "notifications": "الإشعارات",
+      "profile": "ملفي الشخصي",
+      "settings": "الإعدادات",
+      "backToSite": "العودة إلى الموقع"
+    },
+    "header": {
+      "searchPlaceholder": "بحث...",
+      "notifications": "الإشعارات",
+      "noNotifications": "لا توجد إشعارات جديدة.",
+      "markAllRead": "تعليم الكل كمقروء",
+      "viewAll": "عرض الكل",
+      "profile": "الملف الشخصي",
+      "logout": "تسجيل الخروج",
+      "signedInAs": "تم تسجيل الدخول باسم"
+    },
+    "sidebar": {
+      "collapse": "طي القائمة",
+      "expand": "توسيع القائمة"
+    },
+    "breadcrumb": {
+      "home": "الرئيسية"
+    },
+    "roleLabels": {
+      "SUPER_ADMIN": "المدير العام",
+      "ADMIN": "مدير",
+      "USER": "مستخدم"
+    },
+    "statusLabels": {
+      "ACTIVE": "نشط",
+      "PENDING_VERIFICATION": "بانتظار التأكيد",
+      "SUSPENDED": "معلّق",
+      "BLOCKED": "محظور",
+      "INACTIVE": "غير نشط"
+    },
+    "table": {
+      "search": "بحث",
+      "filters": "التصفية",
+      "allRoles": "كل الأدوار",
+      "allStatuses": "كل الحالات",
+      "noResults": "لم يتم العثور على نتائج.",
+      "noResultsHint": "جرّب تغيير عوامل التصفية أو كلمة البحث.",
+      "rowsPerPage": "عدد الصفوف في الصفحة",
+      "page": "صفحة",
+      "of": "من",
+      "showingResults": "عرض {from}–{to} من {total}",
+      "selectedCount": "تم تحديد {count}",
+      "clearSelection": "إلغاء التحديد",
+      "sortBy": "ترتيب حسب",
+      "actions": "الإجراءات"
+    },
+    "common": {
+      "save": "حفظ",
+      "saving": "جاري الحفظ...",
+      "cancel": "إلغاء",
+      "edit": "تعديل",
+      "delete": "حذف",
+      "view": "عرض",
+      "create": "إضافة",
+      "confirm": "تأكيد",
+      "close": "إغلاق",
+      "back": "رجوع",
+      "export": "تصدير",
+      "loading": "جاري التحميل...",
+      "yes": "نعم",
+      "no": "لا",
+      "success": "تم تنفيذ العملية بنجاح.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
+      "unsavedChanges": "لديك تغييرات غير محفوظة.",
+      "requiredField": "هذا الحقل مطلوب.",
+      "optional": "اختياري"
+    },
+    "confirm": {
+      "deleteTitle": "هل تريد الحذف؟",
+      "deleteDescription": "لا يمكن التراجع عن هذا الإجراء.",
+      "genericTitle": "هل أنت متأكد؟"
+    }
+  },
+  "errors": {
+    "403": {
+      "title": "الوصول مرفوض",
+      "description": "ليس لديك الصلاحية اللازمة لعرض هذه الصفحة. إذا كنت تعتقد أن هذا خطأ، تواصل مع مدير النظام.",
+      "backToPanel": "العودة إلى لوحة التحكم",
+      "backToSite": "العودة إلى الموقع"
+    },
+    "404": {
+      "title": "الصفحة غير موجودة",
+      "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+      "backToHome": "العودة إلى الرئيسية"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة تحكم الإدارة",
+    "subtitle": "نظرة عامة على حالة النظام",
+    "stats": {
+      "totalUsers": "إجمالي المستخدمين",
+      "activeUsers": "المستخدمون النشطون",
+      "newUsers": "مستخدمون جدد (آخر ٣٠ يوماً)",
+      "totalAdmins": "إجمالي المدراء",
+      "pendingAppointments": "مواعيد بانتظار المراجعة",
+      "confirmedAppointments": "مواعيد مؤكدة",
+      "todayAppointments": "مواعيد اليوم",
+      "cancelledAppointments": "مواعيد ملغاة"
+    },
+    "charts": {
+      "userGrowth": "نمو المستخدمين",
+      "userGrowthSubtitle": "آخر ٣٠ يوماً",
+      "appointmentStatus": "حالة المواعيد",
+      "appointmentStatusSubtitle": "التوزيع العام"
+    },
+    "recentActivity": {
+      "title": "أحدث الأنشطة الإدارية",
+      "empty": "لا يوجد نشاط مسجل بعد.",
+      "viewAll": "عرض السجل الكامل"
+    },
+    "upcoming": {
+      "title": "المواعيد القادمة",
+      "empty": "لا توجد مواعيد قادمة.",
+      "viewAll": "عرض كل المواعيد"
+    },
+    "quickActions": {
+      "title": "إجراءات سريعة",
+      "addUser": "إضافة مستخدم",
+      "addAdmin": "إضافة مدير",
+      "manageAppointments": "إدارة المواعيد"
+    }
+  },
+  "users": {
+    "title": "إدارة المستخدمين",
+    "subtitle": "عرض وإدارة حسابات المستخدمين",
+    "adminsTitle": "إدارة المدراء",
+    "adminsSubtitle": "إدارة حسابات المدراء وصلاحياتهم",
+    "searchPlaceholder": "ابحث بالاسم أو البريد الإلكتروني أو رقم الهاتف...",
+    "columns": {
+      "user": "المستخدم",
+      "role": "الدور",
+      "status": "الحالة",
+      "joined": "تاريخ الانضمام",
+      "lastLogin": "آخر تسجيل دخول",
+      "actions": "الإجراءات"
+    },
+    "neverLoggedIn": "لم يسجل الدخول بعد",
+    "addUser": "إضافة مستخدم",
+    "addAdmin": "إضافة مدير",
+    "createTitle": "إنشاء حساب جديد",
+    "editTitle": "تعديل المستخدم",
+    "detailsTitle": "تفاصيل المستخدم",
+    "form": {
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "role": "الدور",
+      "status": "الحالة",
+      "password": "كلمة المرور",
+      "passwordHint": "اتركه فارغاً للإبقاء على كلمة المرور الحالية.",
+      "temporaryPassword": "كلمة مرور مؤقتة"
+    },
+    "actions": {
+      "viewDetails": "عرض التفاصيل",
+      "edit": "تعديل البيانات",
+      "changeRole": "تغيير الدور",
+      "changeStatus": "تغيير الحالة",
+      "activate": "تفعيل",
+      "suspend": "تعليق",
+      "block": "حظر",
+      "sendResetLink": "إرسال رابط إعادة تعيين كلمة المرور",
+      "forceLogout": "تسجيل الخروج الإجباري من كل الأجهزة",
+      "delete": "حذف المستخدم",
+      "exportCsv": "تصدير CSV",
+      "bulkActivate": "تفعيل جماعي",
+      "bulkSuspend": "تعليق جماعي",
+      "bulkDelete": "حذف جماعي"
+    },
+    "confirm": {
+      "deleteTitle": "حذف هذا المستخدم؟",
+      "deleteDescription": "سيتم حذف هذا المستخدم وكل البيانات المرتبطة به. لا يمكن التراجع عن هذا الإجراء.",
+      "forceLogoutTitle": "تسجيل الخروج الإجباري من كل الأجهزة؟",
+      "forceLogoutDescription": "سيتم إبطال كل الجلسات النشطة لهذا المستخدم فوراً.",
+      "resetLinkTitle": "إرسال رابط إعادة تعيين كلمة المرور؟",
+      "resetLinkDescription": "سيتم إرسال بريد إلكتروني يحتوي على رابط إعادة تعيين كلمة المرور لهذا المستخدم.",
+      "statusChangeTitle": "تغيير حالة الحساب؟",
+      "bulkDeleteTitle": "حذف {count} مستخدم محدد؟",
+      "cannotModifySuperAdmin": "لا يمكن لمدير عادي تعديل أو حذف حساب المدير العام."
+    },
+    "toast": {
+      "created": "تم إنشاء المستخدم بنجاح.",
+      "updated": "تم تحديث بيانات المستخدم.",
+      "deleted": "تم حذف المستخدم.",
+      "roleChanged": "تم تغيير دور المستخدم.",
+      "statusChanged": "تم تغيير حالة الحساب.",
+      "resetLinkSent": "تم إرسال رابط إعادة التعيين.",
+      "forcedLogout": "تم تسجيل خروج المستخدم من كل الأجهزة.",
+      "exported": "ملف التصدير جاهز."
+    },
+    "tabs": {
+      "overview": "نظرة عامة",
+      "permissions": "الصلاحيات",
+      "sessions": "الجلسات",
+      "activity": "سجل النشاط",
+      "appointments": "المواعيد"
+    },
+    "permissionsOverride": {
+      "title": "صلاحيات مخصصة",
+      "description": "بالإضافة إلى الصلاحيات الافتراضية للدور، يمكنك منح أو تقييد صلاحيات محددة لهذا المستخدم.",
+      "default": "افتراضي الدور",
+      "granted": "مسموح",
+      "denied": "مرفوض"
+    }
+  },
+  "appointments": {
+    "title": "إدارة المواعيد",
+    "subtitle": "مراجعة وإدارة طلبات المواعيد",
+    "myTitle": "مواعيدي",
+    "mySubtitle": "طلباتكم المُرسلة وسجل مواعيدكم",
+    "newRequest": "طلب جديد",
+    "views": {
+      "list": "عرض القائمة",
+      "calendar": "عرض التقويم"
+    },
+    "searchPlaceholder": "ابحث بالموضوع أو الاسم أو رقم الهاتف...",
+    "columns": {
+      "subject": "الموضوع",
+      "requester": "مقدّم الطلب",
+      "date": "التاريخ",
+      "type": "نوع الجلسة",
+      "assignee": "المسؤول",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    },
+    "unassigned": "غير معيّن",
+    "type": {
+      "IN_PERSON": "حضوري",
+      "ONLINE": "عبر الإنترنت",
+      "PHONE": "هاتفي"
+    },
+    "status": {
+      "PENDING": "بانتظار المراجعة",
+      "CONFIRMED": "مؤكد",
+      "RESCHEDULED": "تمت إعادة الجدولة",
+      "COMPLETED": "منتهٍ",
+      "CANCELLED": "ملغى",
+      "REJECTED": "مرفوض",
+      "NO_SHOW": "عدم حضور"
+    },
+    "form": {
+      "subject": "موضوع الموعد",
+      "description": "الوصف",
+      "date": "التاريخ المقترح",
+      "time": "الوقت المقترح",
+      "duration": "المدة (بالدقائق)",
+      "type": "نوع الجلسة",
+      "contactPhone": "رقم الهاتف",
+      "contactEmail": "البريد الإلكتروني (اختياري)",
+      "attachment": "مرفق (اختياري)",
+      "submit": "إرسال الطلب",
+      "submitting": "جاري الإرسال...",
+      "success": "تم إرسال طلبكم. سنعلمكم فور مراجعته."
+    },
+    "detail": {
+      "title": "تفاصيل الموعد",
+      "requestedFor": "الوقت المطلوب",
+      "confirmedFor": "الوقت المؤكد",
+      "location": "مكان الجلسة",
+      "meetingLink": "رابط الجلسة عبر الإنترنت",
+      "internalNotes": "ملاحظة داخلية (للمدراء فقط)",
+      "internalNotesPlaceholder": "ملاحظة يراها فريق الإدارة فقط...",
+      "historyTitle": "سجل التغييرات",
+      "messageToUser": "رسالة إلى المستخدم"
+    },
+    "actions": {
+      "confirm": "تأكيد",
+      "reject": "رفض",
+      "reschedule": "اقتراح وقت جديد",
+      "assign": "تعيين مسؤول",
+      "complete": "تعليم كمنتهٍ",
+      "markNoShow": "تعليم كعدم حضور",
+      "cancel": "إلغاء الموعد",
+      "requestCancel": "طلب إلغاء",
+      "requestReschedule": "طلب تغيير الوقت",
+      "save": "حفظ التغييرات"
+    },
+    "confirm": {
+      "rejectTitle": "رفض هذا الطلب؟",
+      "rejectReasonLabel": "سبب الرفض (يظهر للمستخدم)",
+      "cancelTitle": "إلغاء هذا الموعد؟",
+      "cancelReasonLabel": "سبب الإلغاء",
+      "conflictWarning": "يتعارض هذا الوقت مع موعد مؤكد آخر لنفس المسؤول."
+    },
+    "toast": {
+      "created": "تم إرسال طلب الموعد.",
+      "updated": "تم تحديث الموعد.",
+      "confirmed": "تم تأكيد الموعد.",
+      "rejected": "تم رفض الموعد.",
+      "cancelled": "تم إلغاء الموعد.",
+      "rescheduled": "تمت إعادة جدولة الموعد.",
+      "assigned": "تم تعيين المسؤول."
+    },
+    "empty": {
+      "title": "لا توجد مواعيد",
+      "description": "لم يتم إرسال أي طلب موعد بعد."
+    },
+    "guest": "زائر"
+  },
+  "roles": {
+    "title": "الأدوار والصلاحيات",
+    "subtitle": "إدارة صلاحيات كل دور والاستثناءات الخاصة بالمدراء",
+    "modules": {
+      "DASHBOARD": "لوحة التحكم",
+      "USERS": "المستخدمون",
+      "ADMINS": "المدراء",
+      "ROLES": "الأدوار والصلاحيات",
+      "APPOINTMENTS": "المواعيد",
+      "NOTIFICATIONS": "الإشعارات",
+      "AUDIT_LOG": "سجل النشاطات",
+      "SETTINGS": "الإعدادات"
+    },
+    "actionsLabels": {
+      "VIEW": "عرض",
+      "CREATE": "إنشاء",
+      "EDIT": "تعديل",
+      "DELETE": "حذف",
+      "APPROVE": "موافقة",
+      "MANAGE": "إدارة كاملة",
+      "EXPORT": "تصدير"
+    },
+    "systemRoleNotice": "لا يمكن حذف الأدوار النظامية (المدير العام، مدير، مستخدم)؛ يمكن فقط تعديل صلاحيات دور المدير.",
+    "saveMatrix": "حفظ تغييرات الصلاحيات",
+    "matrixSaved": "تم تحديث مصفوفة الصلاحيات."
+  },
+  "auditLog": {
+    "title": "سجل النشاطات",
+    "subtitle": "السجل الكامل للعمليات الحساسة في النظام",
+    "searchPlaceholder": "ابحث بالمستخدم أو العملية أو الهدف...",
+    "columns": {
+      "time": "الوقت",
+      "actor": "المنفّذ",
+      "action": "العملية",
+      "target": "الهدف",
+      "ip": "عنوان IP"
+    },
+    "system": "النظام",
+    "empty": "لم يتم العثور على أي أحداث."
+  },
+  "notifications": {
+    "title": "الإشعارات",
+    "subtitle": "إشعارات متعلقة بحسابك ومواعيدك",
+    "empty": "لا توجد إشعارات.",
+    "markRead": "تعليم كمقروء",
+    "markAllRead": "تعليم الكل كمقروء"
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "subtitle": "إدارة معلومات حسابك وأمانه",
+    "tabs": {
+      "overview": "معلومات الحساب",
+      "security": "الأمان",
+      "sessions": "الجلسات النشطة"
+    },
+    "form": {
+      "name": "الاسم الكامل",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "save": "حفظ التغييرات"
+    },
+    "changePassword": {
+      "title": "تغيير كلمة المرور",
+      "currentPassword": "كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور الجديدة",
+      "submit": "تغيير كلمة المرور",
+      "success": "تم تغيير كلمة المرور بنجاح.",
+      "wrongCurrent": "كلمة المرور الحالية غير صحيحة."
+    },
+    "sessions": {
+      "title": "الجلسات النشطة",
+      "description": "الأجهزة المسجّلة دخولها حالياً إلى حسابك.",
+      "thisDevice": "هذا الجهاز",
+      "lastActive": "آخر نشاط",
+      "revoke": "إنهاء الجلسة",
+      "revokeAll": "تسجيل الخروج من كل مكان",
+      "revokedToast": "تم إنهاء الجلسة.",
+      "revokeAllConfirmTitle": "تسجيل الخروج من كل مكان؟",
+      "revokeAllConfirmDescription": "سيتم تسجيل خروجك من كل الأجهزة باستثناء هذا الجهاز."
+    }
   }
 }

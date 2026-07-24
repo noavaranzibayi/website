@@ -192,5 +192,502 @@
     "dark": "تیره",
     "system": "سیستم",
     "label": "تم"
+  },
+  "auth": {
+    "login": {
+      "title": "ورود به حساب کاربری",
+      "subtitle": "برای دسترسی به پنل خود وارد شوید",
+      "emailLabel": "ایمیل",
+      "emailPlaceholder": "you@example.com",
+      "passwordLabel": "رمز عبور",
+      "passwordPlaceholder": "••••••••",
+      "rememberMe": "مرا به خاطر بسپار",
+      "forgotPasswordLink": "رمز عبور را فراموش کرده‌اید؟",
+      "submit": "ورود",
+      "submitting": "در حال ورود...",
+      "noAccount": "حساب کاربری ندارید؟",
+      "registerLink": "ثبت‌نام کنید",
+      "accountDisabledNotice": "حساب شما غیرفعال است. برای اطلاعات بیشتر با پشتیبانی تماس بگیرید.",
+      "resendVerification": "ارسال دوباره ایمیل تأیید",
+      "errors": {
+        "invalidCredentials": "ایمیل یا رمز عبور اشتباه است.",
+        "accountLocked": "به دلیل تلاش‌های ناموفق مکرر، حساب شما موقتاً قفل شده است. لطفاً کمی بعد دوباره تلاش کنید.",
+        "accountSuspended": "حساب شما به‌طور موقت معلق شده است.",
+        "accountBlocked": "دسترسی شما به این حساب مسدود شده است.",
+        "accountInactive": "این حساب غیرفعال است.",
+        "emailNotVerified": "ایمیل شما هنوز تأیید نشده است. لطفاً صندوق ورودی خود را بررسی کنید.",
+        "rateLimited": "تعداد تلاش‌ها بیش از حد مجاز است. لطفاً چند دقیقه دیگر دوباره تلاش کنید.",
+        "generic": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+      }
+    },
+    "register": {
+      "title": "ایجاد حساب کاربری",
+      "subtitle": "برای رزرو نوبت و پیگیری درخواست‌ها ثبت‌نام کنید",
+      "nameLabel": "نام و نام‌خانوادگی",
+      "namePlaceholder": "نام کامل شما",
+      "emailLabel": "ایمیل",
+      "phoneLabel": "شماره تماس",
+      "phonePlaceholder": "09xxxxxxxxx",
+      "passwordLabel": "رمز عبور",
+      "passwordHint": "حداقل ۸ کاراکتر، شامل حرف و عدد",
+      "confirmPasswordLabel": "تکرار رمز عبور",
+      "submit": "ثبت‌نام",
+      "submitting": "در حال ثبت‌نام...",
+      "haveAccount": "قبلاً ثبت‌نام کرده‌اید؟",
+      "loginLink": "وارد شوید",
+      "successTitle": "ثبت‌نام با موفقیت انجام شد",
+      "successDescription": "ایمیلی برای تأیید حساب شما ارسال شد. لطفاً صندوق ورودی (یا اسپم) خود را بررسی کنید.",
+      "errors": {
+        "emailTaken": "این ایمیل قبلاً ثبت شده است.",
+        "passwordMismatch": "رمز عبور و تکرار آن یکسان نیستند.",
+        "weakPassword": "رمز عبور باید حداقل ۸ کاراکتر و شامل حرف و عدد باشد.",
+        "invalidPhone": "شماره تماس معتبر نیست.",
+        "rateLimited": "تعداد درخواست‌ها بیش از حد مجاز است. کمی بعد دوباره تلاش کنید.",
+        "generic": "مشکلی در ثبت‌نام پیش آمد. لطفاً دوباره تلاش کنید."
+      }
+    },
+    "forgotPassword": {
+      "title": "بازیابی رمز عبور",
+      "subtitle": "ایمیل خود را وارد کنید تا لینک بازیابی برایتان ارسال شود",
+      "emailLabel": "ایمیل",
+      "submit": "ارسال لینک بازیابی",
+      "submitting": "در حال ارسال...",
+      "backToLogin": "بازگشت به صفحه ورود",
+      "successTitle": "ایمیل ارسال شد",
+      "successDescription": "اگر حسابی با این ایمیل وجود داشته باشد، لینک بازیابی رمز عبور برای آن ارسال می‌شود.",
+      "rateLimited": "تعداد درخواست‌ها بیش از حد مجاز است. کمی بعد دوباره تلاش کنید."
+    },
+    "resetPassword": {
+      "title": "تنظیم رمز عبور جدید",
+      "subtitle": "یک رمز عبور جدید برای حساب خود انتخاب کنید",
+      "passwordLabel": "رمز عبور جدید",
+      "confirmPasswordLabel": "تکرار رمز عبور جدید",
+      "submit": "تغییر رمز عبور",
+      "submitting": "در حال ثبت...",
+      "invalidTokenTitle": "لینک نامعتبر یا منقضی‌شده",
+      "invalidTokenDescription": "این لینک بازیابی رمز عبور دیگر معتبر نیست. می‌توانید یک درخواست جدید ثبت کنید.",
+      "requestNewLink": "درخواست لینک جدید",
+      "successTitle": "رمز عبور با موفقیت تغییر کرد",
+      "successDescription": "اکنون می‌توانید با رمز عبور جدید وارد شوید.",
+      "goToLogin": "ورود به حساب",
+      "errors": {
+        "passwordMismatch": "رمز عبور و تکرار آن یکسان نیستند.",
+        "weakPassword": "رمز عبور باید حداقل ۸ کاراکتر و شامل حرف و عدد باشد.",
+        "generic": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید."
+      }
+    },
+    "verifyEmail": {
+      "title": "تأیید ایمیل",
+      "verifying": "در حال بررسی لینک تأیید...",
+      "successTitle": "ایمیل شما تأیید شد",
+      "successDescription": "حساب شما فعال شد. اکنون می‌توانید وارد شوید.",
+      "invalidTokenTitle": "لینک نامعتبر یا منقضی‌شده",
+      "invalidTokenDescription": "این لینک تأیید ایمیل دیگر معتبر نیست.",
+      "goToLogin": "ورود به حساب",
+      "resendTitle": "ایمیل تأیید را دوباره دریافت کنید",
+      "resendEmailLabel": "ایمیل",
+      "resendSubmit": "ارسال دوباره",
+      "resendSubmitting": "در حال ارسال...",
+      "resendSuccess": "اگر حسابی با این ایمیل وجود داشته باشد و هنوز تأیید نشده باشد، ایمیل تأیید دوباره ارسال می‌شود.",
+      "resendRateLimited": "تعداد درخواست‌ها بیش از حد مجاز است. کمی بعد دوباره تلاش کنید."
+    },
+    "validation": {
+      "required": "این فیلد الزامی است.",
+      "invalidEmail": "ایمیل معتبر نیست."
+    },
+    "backToSite": "بازگشت به سایت"
+  },
+  "panel": {
+    "nav": {
+      "dashboard": "داشبورد",
+      "users": "کاربران",
+      "admins": "مدیران",
+      "appointments": "قرارهای ملاقات",
+      "myAppointments": "قرارهای من",
+      "roles": "نقش‌ها و دسترسی‌ها",
+      "auditLog": "گزارش فعالیت‌ها",
+      "notifications": "اعلان‌ها",
+      "profile": "پروفایل من",
+      "settings": "تنظیمات",
+      "backToSite": "بازگشت به سایت"
+    },
+    "header": {
+      "searchPlaceholder": "جستجو...",
+      "notifications": "اعلان‌ها",
+      "noNotifications": "اعلان جدیدی ندارید.",
+      "markAllRead": "علامت‌گذاری همه به‌عنوان خوانده‌شده",
+      "viewAll": "مشاهده همه",
+      "profile": "پروفایل",
+      "logout": "خروج از حساب",
+      "signedInAs": "وارد شده به‌عنوان"
+    },
+    "sidebar": {
+      "collapse": "جمع کردن منو",
+      "expand": "باز کردن منو"
+    },
+    "breadcrumb": {
+      "home": "خانه"
+    },
+    "roleLabels": {
+      "SUPER_ADMIN": "ادمین کل",
+      "ADMIN": "ادمین",
+      "USER": "کاربر"
+    },
+    "statusLabels": {
+      "ACTIVE": "فعال",
+      "PENDING_VERIFICATION": "در انتظار تأیید",
+      "SUSPENDED": "معلق",
+      "BLOCKED": "مسدود",
+      "INACTIVE": "غیرفعال"
+    },
+    "table": {
+      "search": "جستجو",
+      "filters": "فیلترها",
+      "allRoles": "همه نقش‌ها",
+      "allStatuses": "همه وضعیت‌ها",
+      "noResults": "نتیجه‌ای یافت نشد.",
+      "noResultsHint": "فیلترها یا عبارت جستجو را تغییر دهید.",
+      "rowsPerPage": "ردیف در هر صفحه",
+      "page": "صفحه",
+      "of": "از",
+      "showingResults": "نمایش {from}–{to} از {total}",
+      "selectedCount": "{count} مورد انتخاب شد",
+      "clearSelection": "لغو انتخاب",
+      "sortBy": "مرتب‌سازی",
+      "actions": "عملیات"
+    },
+    "common": {
+      "save": "ذخیره",
+      "saving": "در حال ذخیره...",
+      "cancel": "انصراف",
+      "edit": "ویرایش",
+      "delete": "حذف",
+      "view": "مشاهده",
+      "create": "افزودن",
+      "confirm": "تأیید",
+      "close": "بستن",
+      "back": "بازگشت",
+      "export": "خروجی",
+      "loading": "در حال بارگذاری...",
+      "yes": "بله",
+      "no": "خیر",
+      "success": "عملیات با موفقیت انجام شد.",
+      "error": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
+      "unsavedChanges": "تغییرات ذخیره‌نشده دارید.",
+      "requiredField": "این فیلد الزامی است.",
+      "optional": "اختیاری"
+    },
+    "confirm": {
+      "deleteTitle": "حذف شود؟",
+      "deleteDescription": "این عملیات قابل بازگشت نیست.",
+      "genericTitle": "آیا مطمئن هستید؟"
+    }
+  },
+  "errors": {
+    "403": {
+      "title": "دسترسی غیرمجاز",
+      "description": "شما مجوز لازم برای مشاهده این صفحه را ندارید. اگر فکر می‌کنید این یک اشتباه است، با مدیر سیستم تماس بگیرید.",
+      "backToPanel": "بازگشت به داشبورد",
+      "backToSite": "بازگشت به سایت"
+    },
+    "404": {
+      "title": "صفحه پیدا نشد",
+      "description": "صفحه‌ای که به دنبال آن هستید وجود ندارد یا جابه‌جا شده است.",
+      "backToHome": "بازگشت به خانه"
+    }
+  },
+  "dashboard": {
+    "title": "داشبورد مدیریت",
+    "subtitle": "نمای کلی از وضعیت سیستم",
+    "stats": {
+      "totalUsers": "تعداد کل کاربران",
+      "activeUsers": "کاربران فعال",
+      "newUsers": "کاربران جدید (۳۰ روز اخیر)",
+      "totalAdmins": "تعداد مدیران",
+      "pendingAppointments": "قرارهای در انتظار بررسی",
+      "confirmedAppointments": "قرارهای تأییدشده",
+      "todayAppointments": "قرارهای امروز",
+      "cancelledAppointments": "قرارهای لغوشده"
+    },
+    "charts": {
+      "userGrowth": "روند عضویت کاربران",
+      "userGrowthSubtitle": "۳۰ روز اخیر",
+      "appointmentStatus": "وضعیت قرارهای ملاقات",
+      "appointmentStatusSubtitle": "توزیع کلی"
+    },
+    "recentActivity": {
+      "title": "آخرین فعالیت‌های مدیریتی",
+      "empty": "فعالیتی ثبت نشده است.",
+      "viewAll": "مشاهده گزارش کامل"
+    },
+    "upcoming": {
+      "title": "قرارهای نزدیک",
+      "empty": "قرار نزدیکی وجود ندارد.",
+      "viewAll": "مشاهده همه قرارها"
+    },
+    "quickActions": {
+      "title": "دسترسی سریع",
+      "addUser": "افزودن کاربر",
+      "addAdmin": "افزودن مدیر",
+      "manageAppointments": "مدیریت قرارها"
+    }
+  },
+  "users": {
+    "title": "مدیریت کاربران",
+    "subtitle": "مشاهده و مدیریت حساب‌های کاربری",
+    "adminsTitle": "مدیریت ادمین‌ها",
+    "adminsSubtitle": "مدیریت حساب‌های Admin و دسترسی‌های آن‌ها",
+    "searchPlaceholder": "جستجو بر اساس نام، ایمیل یا شماره تماس...",
+    "columns": {
+      "user": "کاربر",
+      "role": "نقش",
+      "status": "وضعیت",
+      "joined": "تاریخ عضویت",
+      "lastLogin": "آخرین ورود",
+      "actions": "عملیات"
+    },
+    "neverLoggedIn": "هرگز وارد نشده",
+    "addUser": "افزودن کاربر",
+    "addAdmin": "افزودن ادمین",
+    "createTitle": "ایجاد حساب جدید",
+    "editTitle": "ویرایش کاربر",
+    "detailsTitle": "جزئیات کاربر",
+    "form": {
+      "name": "نام و نام‌خانوادگی",
+      "email": "ایمیل",
+      "phone": "شماره تماس",
+      "role": "نقش",
+      "status": "وضعیت",
+      "password": "رمز عبور",
+      "passwordHint": "در صورت خالی گذاشتن، رمز تغییری نمی‌کند.",
+      "temporaryPassword": "رمز عبور موقت"
+    },
+    "actions": {
+      "viewDetails": "مشاهده جزئیات",
+      "edit": "ویرایش اطلاعات",
+      "changeRole": "تغییر نقش",
+      "changeStatus": "تغییر وضعیت",
+      "activate": "فعال‌سازی",
+      "suspend": "معلق‌سازی",
+      "block": "مسدودسازی",
+      "sendResetLink": "ارسال لینک بازیابی رمز",
+      "forceLogout": "خروج اجباری از همه دستگاه‌ها",
+      "delete": "حذف کاربر",
+      "exportCsv": "خروجی CSV",
+      "bulkActivate": "فعال‌سازی گروهی",
+      "bulkSuspend": "معلق‌سازی گروهی",
+      "bulkDelete": "حذف گروهی"
+    },
+    "confirm": {
+      "deleteTitle": "حذف این کاربر؟",
+      "deleteDescription": "این کاربر و تمام اطلاعات مرتبط با او حذف خواهد شد. این عملیات قابل بازگشت نیست.",
+      "forceLogoutTitle": "خروج اجباری از همه دستگاه‌ها؟",
+      "forceLogoutDescription": "تمام نشست‌های فعال این کاربر بلافاصله باطل می‌شوند.",
+      "resetLinkTitle": "ارسال لینک بازیابی رمز؟",
+      "resetLinkDescription": "یک ایمیل حاوی لینک بازیابی رمز عبور برای این کاربر ارسال می‌شود.",
+      "statusChangeTitle": "تغییر وضعیت حساب؟",
+      "bulkDeleteTitle": "حذف {count} کاربر انتخاب‌شده؟",
+      "cannotModifySuperAdmin": "حساب ادمین کل قابل ویرایش یا حذف توسط ادمین معمولی نیست."
+    },
+    "toast": {
+      "created": "کاربر با موفقیت ایجاد شد.",
+      "updated": "اطلاعات کاربر به‌روزرسانی شد.",
+      "deleted": "کاربر حذف شد.",
+      "roleChanged": "نقش کاربر تغییر کرد.",
+      "statusChanged": "وضعیت حساب تغییر کرد.",
+      "resetLinkSent": "لینک بازیابی رمز ارسال شد.",
+      "forcedLogout": "کاربر از تمام دستگاه‌ها خارج شد.",
+      "exported": "فایل خروجی آماده شد."
+    },
+    "tabs": {
+      "overview": "اطلاعات کلی",
+      "permissions": "دسترسی‌ها",
+      "sessions": "نشست‌ها",
+      "activity": "تاریخچه فعالیت",
+      "appointments": "قرارهای ملاقات"
+    },
+    "permissionsOverride": {
+      "title": "دسترسی‌های اختصاصی",
+      "description": "می‌توانید علاوه بر دسترسی‌های پیش‌فرض نقش، برای این کاربر مجوز خاص اضافه یا محدود کنید.",
+      "default": "پیش‌فرض نقش",
+      "granted": "مجاز",
+      "denied": "غیرمجاز"
+    }
+  },
+  "appointments": {
+    "title": "مدیریت قرارهای ملاقات",
+    "subtitle": "بررسی و مدیریت درخواست‌های قرار ملاقات",
+    "myTitle": "قرارهای ملاقات من",
+    "mySubtitle": "درخواست‌های ثبت‌شده و تاریخچه قرارهای شما",
+    "newRequest": "ثبت درخواست جدید",
+    "views": {
+      "list": "نمایش جدولی",
+      "calendar": "نمایش تقویمی"
+    },
+    "searchPlaceholder": "جستجو بر اساس موضوع، نام یا شماره تماس...",
+    "columns": {
+      "subject": "موضوع",
+      "requester": "درخواست‌دهنده",
+      "date": "تاریخ",
+      "type": "نوع جلسه",
+      "assignee": "مسئول جلسه",
+      "status": "وضعیت",
+      "actions": "عملیات"
+    },
+    "unassigned": "تعیین‌نشده",
+    "type": {
+      "IN_PERSON": "حضوری",
+      "ONLINE": "آنلاین",
+      "PHONE": "تلفنی"
+    },
+    "status": {
+      "PENDING": "در انتظار بررسی",
+      "CONFIRMED": "تأییدشده",
+      "RESCHEDULED": "زمان تغییر کرد",
+      "COMPLETED": "برگزار شد",
+      "CANCELLED": "لغوشده",
+      "REJECTED": "ردشده",
+      "NO_SHOW": "عدم حضور"
+    },
+    "form": {
+      "subject": "موضوع قرار",
+      "description": "توضیحات",
+      "date": "تاریخ پیشنهادی",
+      "time": "ساعت پیشنهادی",
+      "duration": "مدت‌زمان (دقیقه)",
+      "type": "نوع جلسه",
+      "contactPhone": "شماره تماس",
+      "contactEmail": "ایمیل (اختیاری)",
+      "attachment": "فایل پیوست (اختیاری)",
+      "submit": "ثبت درخواست",
+      "submitting": "در حال ثبت...",
+      "success": "درخواست شما ثبت شد و پس از بررسی، نتیجه به شما اطلاع داده می‌شود."
+    },
+    "detail": {
+      "title": "جزئیات قرار ملاقات",
+      "requestedFor": "زمان درخواستی",
+      "confirmedFor": "زمان نهایی",
+      "location": "محل جلسه",
+      "meetingLink": "لینک جلسه آنلاین",
+      "internalNotes": "یادداشت داخلی (فقط مدیران)",
+      "internalNotesPlaceholder": "یادداشتی که فقط تیم مدیریت می‌بیند...",
+      "historyTitle": "تاریخچه تغییرات",
+      "messageToUser": "پیام برای کاربر"
+    },
+    "actions": {
+      "confirm": "تأیید قرار",
+      "reject": "رد قرار",
+      "reschedule": "پیشنهاد زمان جدید",
+      "assign": "تعیین مسئول",
+      "complete": "علامت‌گذاری به‌عنوان برگزارشده",
+      "markNoShow": "علامت‌گذاری عدم حضور",
+      "cancel": "لغو قرار",
+      "requestCancel": "درخواست لغو",
+      "requestReschedule": "درخواست تغییر زمان",
+      "save": "ذخیره تغییرات"
+    },
+    "confirm": {
+      "rejectTitle": "رد این درخواست؟",
+      "rejectReasonLabel": "دلیل رد (برای کاربر نمایش داده می‌شود)",
+      "cancelTitle": "لغو این قرار؟",
+      "cancelReasonLabel": "دلیل لغو",
+      "conflictWarning": "این بازه زمانی با یک قرار تأییدشده دیگر برای همین مسئول تداخل دارد."
+    },
+    "toast": {
+      "created": "درخواست قرار ملاقات ثبت شد.",
+      "updated": "قرار ملاقات به‌روزرسانی شد.",
+      "confirmed": "قرار تأیید شد.",
+      "rejected": "قرار رد شد.",
+      "cancelled": "قرار لغو شد.",
+      "rescheduled": "زمان قرار تغییر کرد.",
+      "assigned": "مسئول جلسه تعیین شد."
+    },
+    "empty": {
+      "title": "قراری یافت نشد",
+      "description": "هنوز درخواست قرار ملاقاتی ثبت نشده است."
+    },
+    "guest": "مهمان"
+  },
+  "roles": {
+    "title": "نقش‌ها و سطوح دسترسی",
+    "subtitle": "مدیریت مجوزهای هر نقش و دسترسی‌های اختصاصی مدیران",
+    "modules": {
+      "DASHBOARD": "داشبورد",
+      "USERS": "کاربران",
+      "ADMINS": "مدیران",
+      "ROLES": "نقش‌ها و دسترسی‌ها",
+      "APPOINTMENTS": "قرارهای ملاقات",
+      "NOTIFICATIONS": "اعلان‌ها",
+      "AUDIT_LOG": "گزارش فعالیت‌ها",
+      "SETTINGS": "تنظیمات"
+    },
+    "actionsLabels": {
+      "VIEW": "مشاهده",
+      "CREATE": "ایجاد",
+      "EDIT": "ویرایش",
+      "DELETE": "حذف",
+      "APPROVE": "تأیید",
+      "MANAGE": "مدیریت کامل",
+      "EXPORT": "خروجی گرفتن"
+    },
+    "systemRoleNotice": "نقش‌های سیستمی (ادمین کل، ادمین، کاربر) قابل حذف نیستند؛ فقط مجوزهای نقش ادمین قابل ویرایش است.",
+    "saveMatrix": "ذخیره تغییرات دسترسی",
+    "matrixSaved": "ماتریس دسترسی‌ها به‌روزرسانی شد."
+  },
+  "auditLog": {
+    "title": "گزارش فعالیت‌ها",
+    "subtitle": "تاریخچه کامل عملیات حساس در سیستم",
+    "searchPlaceholder": "جستجو بر اساس کاربر، عملیات یا هدف...",
+    "columns": {
+      "time": "زمان",
+      "actor": "انجام‌دهنده",
+      "action": "عملیات",
+      "target": "هدف",
+      "ip": "آدرس IP"
+    },
+    "system": "سیستم",
+    "empty": "رویدادی یافت نشد."
+  },
+  "notifications": {
+    "title": "اعلان‌ها",
+    "subtitle": "اعلان‌های مربوط به حساب و قرارهای ملاقات شما",
+    "empty": "اعلانی وجود ندارد.",
+    "markRead": "علامت‌گذاری به‌عنوان خوانده‌شده",
+    "markAllRead": "علامت‌گذاری همه به‌عنوان خوانده‌شده"
+  },
+  "profile": {
+    "title": "پروفایل من",
+    "subtitle": "مدیریت اطلاعات حساب و امنیت",
+    "tabs": {
+      "overview": "اطلاعات حساب",
+      "security": "امنیت",
+      "sessions": "نشست‌های فعال"
+    },
+    "form": {
+      "name": "نام و نام‌خانوادگی",
+      "email": "ایمیل",
+      "phone": "شماره تماس",
+      "save": "ذخیره تغییرات"
+    },
+    "changePassword": {
+      "title": "تغییر رمز عبور",
+      "currentPassword": "رمز عبور فعلی",
+      "newPassword": "رمز عبور جدید",
+      "confirmPassword": "تکرار رمز عبور جدید",
+      "submit": "تغییر رمز عبور",
+      "success": "رمز عبور با موفقیت تغییر کرد.",
+      "wrongCurrent": "رمز عبور فعلی اشتباه است."
+    },
+    "sessions": {
+      "title": "نشست‌های فعال",
+      "description": "دستگاه‌هایی که در حال حاضر با حساب شما وارد شده‌اند.",
+      "thisDevice": "این دستگاه",
+      "lastActive": "آخرین فعالیت",
+      "revoke": "پایان نشست",
+      "revokeAll": "خروج از همه دستگاه‌ها",
+      "revokedToast": "نشست پایان یافت.",
+      "revokeAllConfirmTitle": "خروج از همه دستگاه‌ها؟",
+      "revokeAllConfirmDescription": "شما از تمام دستگاه‌ها (به‌جز این یکی) خارج خواهید شد."
+    }
   }
 }

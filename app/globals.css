@@ -112,3 +112,80 @@ body {
     transform: scale(1) translateY(0);
   }
 }
+
+.dialog-overlay {
+  animation: overlay-in 150ms ease-out;
+}
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.dialog-content {
+  animation: dialog-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+[dir="rtl"] .dialog-content {
+  animation-name: dialog-in-rtl;
+}
+
+@keyframes dialog-in-rtl {
+  from {
+    opacity: 0;
+    transform: translate(50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(50%, -50%) scale(1);
+  }
+}
+
+.drawer-content {
+  animation: drawer-in-start 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-content.end-0 {
+  animation-name: drawer-in-end;
+}
+
+@keyframes drawer-in-start {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes drawer-in-end {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+[dir="rtl"] .drawer-content {
+  animation-name: drawer-in-end;
+}
+
+[dir="rtl"] .drawer-content.end-0 {
+  animation-name: drawer-in-start;
+}
