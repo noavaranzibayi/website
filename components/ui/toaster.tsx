@@ -1,8 +1,8 @@
 "use client";
 
 import { Toaster as Sonner } from "sonner";
-import { useTheme } from "next-themes";
 import { useLocale } from "next-intl";
+import { useTheme } from "@/components/ThemeProvider";
 import { localeDirections, type Locale } from "@/i18n/routing";
 
 export function Toaster() {

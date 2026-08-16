@@ -2,9 +2,9 @@
 
 import { useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Sun, Moon, Monitor, Check, type LucideIcon } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
 
 const OPTIONS: { value: "light" | "dark" | "system"; icon: LucideIcon }[] = [
   { value: "light", icon: Sun },

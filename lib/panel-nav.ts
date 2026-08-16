@@ -20,12 +20,14 @@ const ADMIN_NAV_ITEMS: NavItem[] = [
 ];
 
 const ADMIN_TRAILING_ITEMS: NavItem[] = [
+  { key: "consultations", href: "/panel/admin/consultations" },
   { key: "notifications", href: "/panel/notifications" },
   { key: "profile", href: "/panel/profile" },
 ];
 
 const USER_NAV_ITEMS: NavItem[] = [
   { key: "myAppointments", href: "/panel/appointments" },
+  { key: "consultations", href: "/panel/consultations" },
   { key: "notifications", href: "/panel/notifications" },
   { key: "profile", href: "/panel/profile" },
 ];

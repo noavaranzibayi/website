@@ -84,6 +84,12 @@ enum NotificationType {
   SYSTEM
 }
 
+enum ConsultationStatus {
+  OPEN
+  ANSWERED
+  CLOSED
+}
+
 // ============================================================
 // Auth.js required models
 // ============================================================
@@ -166,6 +172,8 @@ model User {
   appointments            Appointment[]        @relation("AppointmentOwner")
   assignedAppointments    Appointment[]        @relation("AppointmentAssignee")
   appointmentHistory      AppointmentHistory[]
+  consultationThreads     ConsultationThread[]
+  consultationMessages    ConsultationMessage[]
   notifications           Notification[]
   auditLogs               AuditLog[]
   passwordResetTokens     PasswordResetToken[]
@@ -330,6 +338,40 @@ model AppointmentHistory {
 
   @@index([appointmentId])
   @@map("appointment_history")
+}
+
+model ConsultationThread {
+  id        String             @id @default(cuid())
+  userId    String
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subject   String
+  serviceId String?
+  status    ConsultationStatus @default(OPEN)
+  closedAt  DateTime?
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+
+  messages ConsultationMessage[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([updatedAt])
+  @@map("consultation_threads")
+}
+
+model ConsultationMessage {
+  id           String             @id @default(cuid())
+  threadId     String
+  thread       ConsultationThread @relation(fields: [threadId], references: [id], onDelete: Cascade)
+  senderId     String
+  sender       User               @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  body         String             @db.Text
+  isAdminReply Boolean            @default(false)
+  createdAt    DateTime           @default(now())
+
+  @@index([threadId, createdAt])
+  @@index([senderId])
+  @@map("consultation_messages")
 }
 
 model Notification {

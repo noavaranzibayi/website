@@ -9,7 +9,10 @@
     "services": "خدمات",
     "whyUs": "چرا ما",
     "contact": "تماس با ما",
-    "booking": "مشاوره و رزرو"
+    "booking": "رزرو",
+    "login": "ورود",
+    "register": "عضویت",
+    "panel": "پنل من"
   },
   "hero": {
     "kicker": "کلینیک تخصصی پوست، مو و لیزر",
@@ -304,6 +307,7 @@
       "admins": "مدیران",
       "appointments": "قرارهای ملاقات",
       "myAppointments": "قرارهای من",
+      "consultations": "مشاوره‌ها",
       "roles": "نقش‌ها و دسترسی‌ها",
       "auditLog": "گزارش فعالیت‌ها",
       "notifications": "اعلان‌ها",
@@ -607,6 +611,57 @@
       "description": "هنوز درخواست قرار ملاقاتی ثبت نشده است."
     },
     "guest": "مهمان"
+  },
+  "consultations": {
+    "title": "مشاوره‌ها و سوالات من",
+    "subtitle": "سوال‌ها، درخواست‌های مشاوره و پاسخ‌های تیم کلینیک را در این بخش پیگیری کنید.",
+    "adminTitle": "تیکت‌های مشاوره",
+    "adminSubtitle": "سوال‌های کاربران را در یک صف واحد ببینید و پاسخ دهید.",
+    "newTicket": "تیکت جدید",
+    "form": {
+      "subject": "موضوع",
+      "service": "خدمت مرتبط",
+      "servicePlaceholder": "یک خدمت را انتخاب کنید",
+      "message": "متن سوال",
+      "submit": "ثبت تیکت"
+    },
+    "status": {
+      "OPEN": "منتظر پاسخ",
+      "ANSWERED": "پاسخ داده شد",
+      "CLOSED": "بسته شده"
+    },
+    "list": {
+      "updatedAt": "آخرین بروزرسانی {date} • {count} پیام"
+    },
+    "detail": {
+      "createdAt": "ایجاد شده در {date}",
+      "timelineTitle": "گفت‌وگو",
+      "messagesCount": "پیام",
+      "replyTitle": "ارسال پاسخ",
+      "replyPlaceholder": "پیام خود را اینجا بنویسید...",
+      "closedDescription": "این تیکت بسته شده است. اگر هنوز نیاز به پیگیری دارید، تیکت جدید ثبت کنید.",
+      "customerTitle": "اطلاعات مشتری",
+      "customerName": "نام و نام‌خانوادگی",
+      "customerEmail": "ایمیل",
+      "customerPhone": "شماره تماس"
+    },
+    "actions": {
+      "reply": "ارسال پاسخ",
+      "close": "بستن تیکت"
+    },
+    "message": {
+      "you": "شما",
+      "admin": "تیم کلینیک"
+    },
+    "toast": {
+      "created": "تیکت مشاوره ثبت شد.",
+      "replied": "پاسخ ارسال شد.",
+      "closed": "تیکت بسته شد."
+    },
+    "empty": {
+      "title": "هنوز تیکت مشاوره‌ای ندارید",
+      "description": "برای پرسیدن سوال، دریافت مشاوره یا پیگیری با تیم کلینیک، یک تیکت جدید ثبت کنید."
+    }
   },
   "roles": {
     "title": "نقش‌ها و سطوح دسترسی",

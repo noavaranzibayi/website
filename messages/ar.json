@@ -9,7 +9,10 @@
     "services": "الخدمات",
     "whyUs": "لماذا نحن",
     "contact": "تواصل معنا",
-    "booking": "استشارة وحجز موعد"
+    "booking": "حجز",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "panel": "لوحتي"
   },
   "hero": {
     "kicker": "عيادة متخصصة بالبشرة والشعر والليزر",
@@ -304,6 +307,7 @@
       "admins": "المدراء",
       "appointments": "المواعيد",
       "myAppointments": "مواعيدي",
+      "consultations": "الاستشارات",
       "roles": "الأدوار والصلاحيات",
       "auditLog": "سجل النشاطات",
       "notifications": "الإشعارات",
@@ -607,6 +611,57 @@
       "description": "لم يتم إرسال أي طلب موعد بعد."
     },
     "guest": "زائر"
+  },
+  "consultations": {
+    "title": "استشاراتي وأسئلتي",
+    "subtitle": "تابع أسئلتك وطلبات الاستشارة وردود فريق العيادة من هذا القسم.",
+    "adminTitle": "تذاكر الاستشارات",
+    "adminSubtitle": "راجع أسئلة العملاء وأجب عنها من قائمة واحدة.",
+    "newTicket": "تذكرة جديدة",
+    "form": {
+      "subject": "الموضوع",
+      "service": "الخدمة المرتبطة",
+      "servicePlaceholder": "اختر خدمة",
+      "message": "سؤالكم",
+      "submit": "إرسال التذكرة"
+    },
+    "status": {
+      "OPEN": "بانتظار الرد",
+      "ANSWERED": "تم الرد",
+      "CLOSED": "مغلقة"
+    },
+    "list": {
+      "updatedAt": "آخر تحديث {date} • {count} رسائل"
+    },
+    "detail": {
+      "createdAt": "أُنشئت في {date}",
+      "timelineTitle": "المحادثة",
+      "messagesCount": "رسائل",
+      "replyTitle": "إرسال رد",
+      "replyPlaceholder": "اكتب رسالتك هنا...",
+      "closedDescription": "هذه التذكرة مغلقة. إذا كنت تحتاج متابعة إضافية، أنشئ تذكرة جديدة.",
+      "customerTitle": "معلومات العميل",
+      "customerName": "الاسم الكامل",
+      "customerEmail": "البريد الإلكتروني",
+      "customerPhone": "رقم الهاتف"
+    },
+    "actions": {
+      "reply": "إرسال الرد",
+      "close": "إغلاق التذكرة"
+    },
+    "message": {
+      "you": "أنت",
+      "admin": "فريق العيادة"
+    },
+    "toast": {
+      "created": "تم إنشاء تذكرة الاستشارة.",
+      "replied": "تم إرسال الرد.",
+      "closed": "تم إغلاق التذكرة."
+    },
+    "empty": {
+      "title": "لا توجد استشارات بعد",
+      "description": "أنشئ تذكرة لطرح سؤال أو طلب استشارة أو متابعة مع فريق العيادة."
+    }
   },
   "roles": {
     "title": "الأدوار والصلاحيات",

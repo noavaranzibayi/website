@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
+import Script from "next/script";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -13,6 +14,19 @@ const vazirmatn = Vazirmatn({
   variable: "--font-body",
   display: "swap",
 });
+
+const themeInitScript = `(() => {
+  try {
+    const storedTheme = localStorage.getItem("theme");
+    const theme = storedTheme === "light" || storedTheme === "dark" || storedTheme === "system"
+      ? storedTheme
+      : "system";
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    const resolvedTheme = theme === "system" ? systemTheme : theme;
+    document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
+    document.documentElement.style.colorScheme = resolvedTheme;
+  } catch {}
+})();`;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -81,6 +95,9 @@ export default async function LocaleLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
         <ThemeProvider>
           <NextIntlClientProvider>
             {children}

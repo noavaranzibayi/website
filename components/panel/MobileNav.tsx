@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Menu, ExternalLink } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
+import BrandLogo from "@/components/BrandLogo";
 import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
 import type { NavItem } from "@/lib/panel-nav";
 import { NAV_ICONS } from "@/components/panel/nav-icons";
@@ -29,7 +29,7 @@ export default function MobileNav({ navItems }: { navItems: NavItem[] }) {
       <DrawerContent side="start">
         <DrawerHeader>
           <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="" width={26} height={21} />
+            <BrandLogo alt="" size="sm" />
             <DrawerTitle>نوآوران زیبایی</DrawerTitle>
           </div>
         </DrawerHeader>

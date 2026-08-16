@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ChevronsLeft, ChevronsRight, ExternalLink } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/cn";
+import BrandLogo from "@/components/BrandLogo";
 import type { NavItem } from "@/lib/panel-nav";
 import { NAV_ICONS } from "@/components/panel/nav-icons";
 
@@ -22,7 +22,7 @@ export default function Sidebar({ navItems }: { navItems: NavItem[] }) {
       )}
     >
       <div className="flex h-16 items-center gap-2 border-b border-navy-100 px-4 dark:border-navy-800">
-        <Image src="/logo.svg" alt="" width={28} height={22} className="shrink-0" />
+        <BrandLogo alt="" size="sm" className="shrink-0" />
         {!collapsed && (
           <span className="truncate text-sm font-bold text-navy-800 dark:text-white">نوآوران زیبایی</span>
         )}

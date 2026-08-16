@@ -9,7 +9,10 @@
     "services": "Services",
     "whyUs": "Why Us",
     "contact": "Contact",
-    "booking": "Consultation & Booking"
+    "booking": "Book",
+    "login": "Sign in",
+    "register": "Sign up",
+    "panel": "My Panel"
   },
   "hero": {
     "kicker": "Specialized Skin, Hair & Laser Clinic",
@@ -304,6 +307,7 @@
       "admins": "Admins",
       "appointments": "Appointments",
       "myAppointments": "My Appointments",
+      "consultations": "Consultations",
       "roles": "Roles & Permissions",
       "auditLog": "Activity Log",
       "notifications": "Notifications",
@@ -607,6 +611,57 @@
       "description": "No appointment requests have been submitted yet."
     },
     "guest": "Guest"
+  },
+  "consultations": {
+    "title": "My Consultations",
+    "subtitle": "Track your questions, consultation requests, and the clinic team's replies.",
+    "adminTitle": "Consultation Tickets",
+    "adminSubtitle": "Review and answer customer questions from one queue.",
+    "newTicket": "New Ticket",
+    "form": {
+      "subject": "Subject",
+      "service": "Related service",
+      "servicePlaceholder": "Select a service",
+      "message": "Your question",
+      "submit": "Submit ticket"
+    },
+    "status": {
+      "OPEN": "Waiting for reply",
+      "ANSWERED": "Answered",
+      "CLOSED": "Closed"
+    },
+    "list": {
+      "updatedAt": "Updated {date} • {count} messages"
+    },
+    "detail": {
+      "createdAt": "Created on {date}",
+      "timelineTitle": "Conversation",
+      "messagesCount": "messages",
+      "replyTitle": "Reply",
+      "replyPlaceholder": "Write your message here...",
+      "closedDescription": "This ticket is closed. Start a new ticket if you need more help.",
+      "customerTitle": "Customer information",
+      "customerName": "Full name",
+      "customerEmail": "Email",
+      "customerPhone": "Phone number"
+    },
+    "actions": {
+      "reply": "Send reply",
+      "close": "Close ticket"
+    },
+    "message": {
+      "you": "You",
+      "admin": "Clinic team"
+    },
+    "toast": {
+      "created": "Consultation ticket created.",
+      "replied": "Reply sent.",
+      "closed": "Ticket closed."
+    },
+    "empty": {
+      "title": "No consultations yet",
+      "description": "Create a ticket to ask questions, request consultation, or follow up with the clinic team."
+    }
   },
   "roles": {
     "title": "Roles & Permissions",

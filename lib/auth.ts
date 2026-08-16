@@ -38,8 +38,14 @@ type AppToken = {
 };
 
 const SESSION_MAX_AGE_SEC = 30 * 24 * 60 * 60; // 30-day ceiling — see loginAction for the "remember me" cookie logic.
+const authSecret = process.env.AUTH_SECRET ?? process.env.NEXTAUTH_SECRET;
+
+if (!authSecret && process.env.NODE_ENV === "production") {
+  throw new Error("Missing AUTH_SECRET. Set AUTH_SECRET or NEXTAUTH_SECRET in the environment.");
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  secret: authSecret ?? "dev-only-auth-secret",
   session: {
     strategy: "jwt",
     maxAge: SESSION_MAX_AGE_SEC,

@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { ArrowLeft, Target, Compass } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import BrandLockup from "@/components/BrandLockup";
 
 export default async function AboutTeaser() {
   const t = await getTranslations();
@@ -12,7 +12,9 @@ export default async function AboutTeaser() {
         <div className="relative mx-auto w-full max-w-sm lg:mx-0">
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-100 via-white to-lime-100 dark:from-navy-900 dark:via-navy-950 dark:to-navy-900" />
           <div className="flex aspect-square items-center justify-center rounded-[2rem] border border-navy-100 bg-white shadow-sm dark:border-navy-800 dark:bg-navy-900">
-            <Image src="/logo.svg" alt="نوآوران زیبایی" width={140} height={113} />
+            <div className="rounded-[2rem] bg-gradient-to-br from-white via-navy-50 to-gold-50 px-8 py-7 shadow-[0_24px_60px_rgba(15,23,42,0.08)] dark:from-navy-900 dark:via-navy-900 dark:to-navy-800">
+              <BrandLockup size="lg" showSubtitle className="scale-[1.08]" />
+            </div>
           </div>
         </div>
 

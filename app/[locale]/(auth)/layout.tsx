@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
+import BrandLockup from "@/components/BrandLockup";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
@@ -31,9 +31,8 @@ export default async function AuthLayout({
       </div>
 
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="نوآوران زیبایی" width={32} height={26} className="brightness-0 invert" />
-          <span className="text-base font-bold text-white">نوآوران زیبایی</span>
+        <Link href="/">
+          <BrandLockup size="xl" surface="dark" showSubtitle priority />
         </Link>
         <div className="flex items-center gap-2">
           <ThemeSwitcher />

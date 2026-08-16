@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { Phone, MapPin, Mail } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import BrandLockup from "./BrandLockup";
 import InstagramIcon from "./icons/InstagramIcon";
 
 export default async function Footer() {
@@ -26,10 +26,7 @@ export default async function Footer() {
     <footer className="border-t border-white/5 bg-navy-950 text-navy-100">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:grid-cols-3">
         <div>
-          <div className="flex items-center gap-2">
-            <Image src="/logo.svg" alt="نوآوران زیبایی" width={32} height={26} className="brightness-0 invert" />
-            <span className="text-base font-bold text-white">نوآوران زیبایی</span>
-          </div>
+          <BrandLockup size="md" surface="dark" showSubtitle />
           <p className="mt-4 max-w-xs text-sm leading-7 text-navy-300">{t("footer.tagline")}</p>
         </div>
 

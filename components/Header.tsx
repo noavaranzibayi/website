@@ -1,36 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import type { RoleName } from "@/app/generated/prisma/client";
 import type { Locale } from "@/i18n/routing";
+import BrandLockup from "./BrandLockup";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 
-export default function Header({ locale }: { locale: Locale }) {
+export default function Header({
+  locale,
+  sessionUser,
+}: {
+  locale: Locale;
+  sessionUser: { name: string; role: RoleName } | null;
+}) {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const links: { href: string; label: string }[] = [
-    { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
     { href: "/services", label: t("services") },
-    { href: "/why-us", label: t("whyUs") },
     { href: "/contact", label: t("contact") },
   ];
+  const panelHref = sessionUser?.role === "USER" ? "/panel/profile" : "/panel/admin/dashboard";
 
   const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur dark:border-navy-800 dark:bg-navy-950/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <Image src="/logo.svg" alt="نوآوران زیبایی" width={36} height={29} priority />
-          <span className="text-base font-bold text-navy-700 dark:text-navy-100 sm:text-lg">
-            نوآوران زیبایی
-          </span>
+        <Link href="/" className="shrink-0">
+          <BrandLockup size="lg" className="hidden sm:inline-flex" priority />
+          <BrandLockup size="sm" className="sm:hidden" priority />
         </Link>
 
         <nav className="hidden items-center gap-1 text-sm font-medium lg:flex">
@@ -53,6 +57,29 @@ export default function Header({ locale }: { locale: Locale }) {
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeSwitcher />
           <LanguageSwitcher locale={locale} />
+          {sessionUser ? (
+            <Link
+              href={panelHref}
+              className="rounded-full border border-navy-200 px-4 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-navy-50 dark:border-navy-700 dark:text-navy-100 dark:hover:bg-navy-900"
+            >
+              {t("panel")}
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="rounded-full px-3 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-navy-50 dark:text-navy-100 dark:hover:bg-navy-900"
+              >
+                {t("login")}
+              </Link>
+              <Link
+                href="/register"
+                className="rounded-full border border-navy-200 px-4 py-2 text-sm font-semibold text-navy-700 transition-colors hover:bg-navy-50 dark:border-navy-700 dark:text-navy-100 dark:hover:bg-navy-900"
+              >
+                {t("register")}
+              </Link>
+            </>
+          )}
           <Link
             href="/booking"
             className="rounded-full bg-gold-400 px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm transition-colors hover:bg-gold-300"
@@ -92,6 +119,32 @@ export default function Header({ locale }: { locale: Locale }) {
                 {link.label}
               </Link>
             ))}
+            {sessionUser ? (
+              <Link
+                href={panelHref}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-2.5 font-semibold text-navy-700 dark:text-navy-100"
+              >
+                {t("panel")}
+              </Link>
+            ) : (
+              <div className="mt-2 flex flex-wrap gap-2">
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="rounded-full px-3 py-2 font-semibold text-navy-700 dark:text-navy-100"
+                >
+                  {t("login")}
+                </Link>
+                <Link
+                  href="/register"
+                  onClick={() => setOpen(false)}
+                  className="rounded-full border border-navy-200 px-4 py-2 font-semibold text-navy-700 dark:border-navy-700 dark:text-navy-100"
+                >
+                  {t("register")}
+                </Link>
+              </div>
+            )}
             <Link
               href="/booking"
               onClick={() => setOpen(false)}
