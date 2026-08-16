@@ -412,6 +412,7 @@
       "users": "Users",
       "admins": "Admins",
       "appointments": "Appointments",
+      "services": "Services",
       "myAppointments": "My Appointments",
       "consultations": "Consultations",
       "roles": "Roles & Permissions",
@@ -623,6 +624,59 @@
       "granted": "Allowed",
       "denied": "Denied"
     }
+  },
+  "servicesAdmin": {
+    "title": "Manage Services",
+    "subtitle": "Add, edit, and reorder the services shown on the site",
+    "searchPlaceholder": "Search by name or slug...",
+    "columns": {
+      "service": "Service",
+      "slug": "Slug",
+      "order": "Order",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "active": "Active",
+    "inactive": "Inactive",
+    "addService": "Add Service",
+    "createTitle": "Add New Service",
+    "createSubtitle": "Fill in the service details in all three languages",
+    "editTitle": "Edit Service",
+    "backToList": "Back to services",
+    "form": {
+      "slug": "Slug",
+      "slugHint": "Lowercase letters, numbers and hyphens only; used in the page URL. Example: hair-transplant",
+      "image": "Image path",
+      "imageHint": "Path to the image file under /public, e.g. /services/hair-transplant.png",
+      "order": "Display order",
+      "orderHint": "Lower numbers appear first.",
+      "isActive": "Show on site",
+      "isActiveHint": "When off, this service is hidden from the public site.",
+      "tag": "Short tag",
+      "titleLabel": "Title",
+      "description": "Description"
+    },
+    "localeLabels": {
+      "fa": "Persian",
+      "en": "English",
+      "ar": "Arabic"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete service",
+      "viewOnSite": "View on site"
+    },
+    "confirm": {
+      "deleteTitle": "Delete this service?",
+      "deleteDescription": "This service and all of its translations will be removed. This cannot be undone."
+    },
+    "toast": {
+      "created": "Service created successfully.",
+      "updated": "Service updated.",
+      "deleted": "Service deleted.",
+      "slugTaken": "This slug is already in use."
+    },
+    "empty": "No services yet."
   },
   "appointments": {
     "title": "Appointment Management",

@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { Info, Sparkles, ArrowLeft } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { SERVICE_IMAGES } from "@/lib/content-icons";
+import { getActiveServices } from "@/lib/data/services";
+import type { Locale } from "@/app/generated/prisma/client";
 import Reveal, { StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
-
-type ServiceItem = { id: string; title: string };
 
 export default async function Services({
   limit,
@@ -18,9 +17,10 @@ export default async function Services({
   showNote?: boolean;
   showHeading?: boolean;
 } = {}) {
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("services");
   const tCommon = await getTranslations("common");
-  const allItems = t.raw("items") as ServiceItem[];
+  const allItems = await getActiveServices(locale);
   const items = limit ? allItems.slice(0, limit) : allItems;
 
   return (
@@ -51,33 +51,26 @@ export default async function Services({
         <StaggerGroup
           className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 ${showHeading ? "mt-10" : ""}`}
         >
-          {items.map((item) => {
-            const image = SERVICE_IMAGES[item.id];
-            return (
-              <StaggerItem
-                key={item.id}
+          {items.map((item) => (
+            <StaggerItem key={item.id}>
+              <Link
+                href={`/services/${item.slug}`}
                 className="group flex flex-col items-center gap-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] pb-5 text-center backdrop-blur transition-all hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/[0.08]"
               >
                 <div className="relative h-32 w-full sm:h-36">
                   <div className="absolute inset-x-6 bottom-0 top-3 -z-10 rounded-full bg-gold-400/10 blur-xl transition-colors group-hover:bg-gold-400/20" />
-                  {image ? (
-                    <Image
-                      src={image}
-                      alt={item.title}
-                      width={220}
-                      height={260}
-                      className="h-full w-full object-contain"
-                    />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center">
-                      <Sparkles className="h-8 w-8 text-gold-300" />
-                    </span>
-                  )}
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={220}
+                    height={260}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <span className="text-sm font-semibold text-white">{item.title}</span>
-              </StaggerItem>
-            );
-          })}
+              </Link>
+            </StaggerItem>
+          ))}
         </StaggerGroup>
 
         {showViewAll && (

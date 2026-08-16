@@ -412,6 +412,7 @@
       "users": "المستخدمون",
       "admins": "المدراء",
       "appointments": "المواعيد",
+      "services": "الخدمات",
       "myAppointments": "مواعيدي",
       "consultations": "الاستشارات",
       "roles": "الأدوار والصلاحيات",
@@ -623,6 +624,59 @@
       "granted": "مسموح",
       "denied": "مرفوض"
     }
+  },
+  "servicesAdmin": {
+    "title": "إدارة الخدمات",
+    "subtitle": "إضافة الخدمات وتعديلها وترتيبها كما تظهر في الموقع",
+    "searchPlaceholder": "البحث بالاسم أو المعرّف...",
+    "columns": {
+      "service": "الخدمة",
+      "slug": "المعرّف (Slug)",
+      "order": "الترتيب",
+      "status": "الحالة",
+      "actions": "إجراءات"
+    },
+    "active": "مفعّلة",
+    "inactive": "غير مفعّلة",
+    "addService": "إضافة خدمة",
+    "createTitle": "إضافة خدمة جديدة",
+    "createSubtitle": "أكملوا بيانات الخدمة باللغات الثلاث",
+    "editTitle": "تعديل الخدمة",
+    "backToList": "العودة إلى قائمة الخدمات",
+    "form": {
+      "slug": "المعرّف (Slug)",
+      "slugHint": "أحرف إنجليزية صغيرة وأرقام وشرطات فقط؛ يُستخدم في رابط الصفحة. مثال: hair-transplant",
+      "image": "مسار الصورة",
+      "imageHint": "مسار ملف الصورة ضمن مجلد public، مثال: /services/hair-transplant.png",
+      "order": "ترتيب العرض",
+      "orderHint": "الرقم الأصغر يظهر أولاً.",
+      "isActive": "عرض في الموقع",
+      "isActiveHint": "عند التعطيل، لن تظهر هذه الخدمة في الموقع العام.",
+      "tag": "وسم قصير",
+      "titleLabel": "العنوان",
+      "description": "الوصف"
+    },
+    "localeLabels": {
+      "fa": "الفارسية",
+      "en": "الإنجليزية",
+      "ar": "العربية"
+    },
+    "actions": {
+      "edit": "تعديل",
+      "delete": "حذف الخدمة",
+      "viewOnSite": "عرض في الموقع"
+    },
+    "confirm": {
+      "deleteTitle": "حذف هذه الخدمة؟",
+      "deleteDescription": "سيتم حذف هذه الخدمة وجميع ترجماتها. لا يمكن التراجع عن هذا الإجراء."
+    },
+    "toast": {
+      "created": "تم إنشاء الخدمة بنجاح.",
+      "updated": "تم تحديث الخدمة.",
+      "deleted": "تم حذف الخدمة.",
+      "slugTaken": "هذا المعرّف مستخدم بالفعل."
+    },
+    "empty": "لا توجد خدمات بعد."
   },
   "appointments": {
     "title": "إدارة المواعيد",

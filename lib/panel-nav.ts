@@ -15,6 +15,7 @@ const ADMIN_NAV_ITEMS: NavItem[] = [
   { key: "users", href: "/panel/admin/users", module: "USERS" },
   { key: "admins", href: "/panel/admin/admins", module: "ADMINS" },
   { key: "appointments", href: "/panel/admin/appointments", module: "APPOINTMENTS" },
+  { key: "services", href: "/panel/admin/services", module: "SERVICES" },
   { key: "roles", href: "/panel/admin/roles", module: "ROLES" },
   { key: "auditLog", href: "/panel/admin/audit-log", module: "AUDIT_LOG" },
 ];

@@ -412,6 +412,7 @@
       "users": "کاربران",
       "admins": "مدیران",
       "appointments": "قرارهای ملاقات",
+      "services": "خدمات",
       "myAppointments": "قرارهای من",
       "consultations": "مشاوره‌ها",
       "roles": "نقش‌ها و دسترسی‌ها",
@@ -623,6 +624,59 @@
       "granted": "مجاز",
       "denied": "غیرمجاز"
     }
+  },
+  "servicesAdmin": {
+    "title": "مدیریت خدمات",
+    "subtitle": "افزودن، ویرایش و مرتب‌سازی خدمات نمایش‌داده‌شده در سایت",
+    "searchPlaceholder": "جستجو بر اساس نام یا شناسه خدمت...",
+    "columns": {
+      "service": "خدمت",
+      "slug": "شناسه (Slug)",
+      "order": "ترتیب",
+      "status": "وضعیت",
+      "actions": "عملیات"
+    },
+    "active": "فعال",
+    "inactive": "غیرفعال",
+    "addService": "افزودن خدمت",
+    "createTitle": "افزودن خدمت جدید",
+    "createSubtitle": "اطلاعات خدمت را به هر سه زبان تکمیل کنید",
+    "editTitle": "ویرایش خدمت",
+    "backToList": "بازگشت به فهرست خدمات",
+    "form": {
+      "slug": "شناسه (Slug)",
+      "slugHint": "فقط حروف کوچک انگلیسی، عدد و خط‌تیره؛ در آدرس صفحه استفاده می‌شود. مثال: hair-transplant",
+      "image": "مسیر تصویر",
+      "imageHint": "مسیر فایل تصویر در پوشه public، مثلاً: /services/hair-transplant.png",
+      "order": "ترتیب نمایش",
+      "orderHint": "عدد کوچک‌تر، زودتر نمایش داده می‌شود.",
+      "isActive": "نمایش در سایت",
+      "isActiveHint": "در صورت غیرفعال بودن، این خدمت در سایت نمایش داده نمی‌شود.",
+      "tag": "برچسب کوتاه",
+      "titleLabel": "عنوان",
+      "description": "توضیحات"
+    },
+    "localeLabels": {
+      "fa": "فارسی",
+      "en": "انگلیسی",
+      "ar": "عربی"
+    },
+    "actions": {
+      "edit": "ویرایش",
+      "delete": "حذف خدمت",
+      "viewOnSite": "مشاهده در سایت"
+    },
+    "confirm": {
+      "deleteTitle": "حذف این خدمت؟",
+      "deleteDescription": "این خدمت از سایت و همه زبان‌های آن حذف خواهد شد. این عملیات قابل بازگشت نیست."
+    },
+    "toast": {
+      "created": "خدمت با موفقیت ایجاد شد.",
+      "updated": "خدمت به‌روزرسانی شد.",
+      "deleted": "خدمت حذف شد.",
+      "slugTaken": "این شناسه قبلاً استفاده شده است."
+    },
+    "empty": "هنوز خدمتی ثبت نشده است."
   },
   "appointments": {
     "title": "مدیریت قرارهای ملاقات",

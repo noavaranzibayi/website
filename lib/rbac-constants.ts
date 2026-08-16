@@ -13,6 +13,7 @@ export const MODULES = [
   "NOTIFICATIONS",
   "AUDIT_LOG",
   "SETTINGS",
+  "SERVICES",
 ] as const satisfies readonly PermissionModule[];
 
 export const ACTIONS = [

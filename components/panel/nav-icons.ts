@@ -8,6 +8,7 @@ import {
   History,
   Bell,
   UserCircle,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -18,6 +19,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   appointments: CalendarClock,
   myAppointments: CalendarClock,
   consultations: MessageSquareMore,
+  services: Sparkles,
   roles: KeyRound,
   auditLog: History,
   notifications: Bell,
