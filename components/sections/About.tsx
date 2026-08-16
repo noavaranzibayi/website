@@ -1,6 +1,6 @@
 import { Target, Compass } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import BrandLockup from "@/components/BrandLockup";
+import PortraitPanel from "@/components/sections/PortraitPanel";
 
 export default async function About() {
   const t = await getTranslations("about");
@@ -15,10 +15,13 @@ export default async function About() {
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div className="relative mx-auto w-full max-w-sm lg:mx-0">
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-100 via-white to-lime-100 dark:from-navy-900 dark:via-navy-950 dark:to-navy-900" />
-          <div className="flex aspect-square items-center justify-center rounded-[2rem] border border-navy-100 bg-white shadow-sm dark:border-navy-800 dark:bg-navy-900">
-            <div className="rounded-[2rem] bg-gradient-to-br from-white via-navy-50 to-gold-50 px-8 py-7 shadow-[0_24px_60px_rgba(15,23,42,0.08)] dark:from-navy-900 dark:via-navy-900 dark:to-navy-800">
-              <BrandLockup size="lg" showSubtitle className="scale-[1.08]" />
-            </div>
+          <div className="rounded-[2rem] border border-navy-100 bg-white p-4 shadow-sm dark:border-navy-800 dark:bg-navy-900">
+            <PortraitPanel
+              src="/portraits/about-hijab.jpg"
+              alt="Professional beauty portrait"
+              className="mx-auto"
+              glowClass="from-gold-300/25 via-white/10 to-lime-300/15"
+            />
           </div>
         </div>
 

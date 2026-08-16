@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CalendarCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import PortraitPanel from "@/components/sections/PortraitPanel";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -60,7 +61,7 @@ export default function Booking({ showHeading = true }: { showHeading?: boolean 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <div
           className={`grid gap-10 lg:items-center lg:gap-16 ${
-            showHeading ? "lg:grid-cols-[0.85fr_1.15fr]" : "mx-auto max-w-xl"
+            showHeading ? "lg:grid-cols-[0.85fr_1.15fr]" : "mx-auto max-w-5xl lg:grid-cols-[0.85fr_1.15fr]"
           }`}
         >
           {showHeading && (
@@ -70,6 +71,28 @@ export default function Booking({ showHeading = true }: { showHeading?: boolean 
                 {t("subtitle")}
               </span>
               <h2 className="mt-5 text-2xl font-extrabold sm:text-3xl">{t("title")}</h2>
+              <p className="mt-4 max-w-lg text-base leading-8 text-navy-100/90">
+                {t("form.success")}
+              </p>
+              <div className="mt-8 hidden max-w-md lg:block">
+                <PortraitPanel
+                  src="/portraits/booking-hijab.jpg"
+                  alt="Luxury beauty portrait"
+                  glowClass="from-lime-300/20 via-gold-300/10 to-transparent"
+                  imageClassName="translate-y-4 scale-[1.04]"
+                />
+              </div>
+            </div>
+          )}
+
+          {!showHeading && (
+            <div className="hidden lg:block">
+              <PortraitPanel
+                src="/portraits/booking-hijab.jpg"
+                alt="Luxury beauty portrait"
+                glowClass="from-lime-300/20 via-gold-300/10 to-transparent"
+                imageClassName="translate-y-4 scale-[1.04]"
+              />
             </div>
           )}
 

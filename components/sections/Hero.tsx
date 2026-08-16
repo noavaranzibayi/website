@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, Sparkles, Droplets, Scissors, Zap, Check } f
 import { useTranslations } from "next-intl";
 import type { LucideIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import PortraitPanel from "@/components/sections/PortraitPanel";
 
 type Slide = { id: string; tag: string; title: string; subtitle: string };
 
@@ -94,7 +95,7 @@ export default function Hero() {
                 }}
               />
 
-              <div className="relative mx-auto flex h-full max-w-6xl items-center px-4 sm:px-6">
+              <div className="relative mx-auto grid h-full max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:gap-14">
                 <div
                   className={`max-w-2xl transition-all duration-700 ease-out ${
                     active ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
@@ -126,6 +127,19 @@ export default function Hero() {
                       {t("ctaBooking")}
                     </Link>
                   </div>
+                </div>
+
+                <div
+                  className={`relative hidden transition-all duration-700 ease-out lg:block ${
+                    active ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                  }`}
+                >
+                  <PortraitPanel
+                    src="/portraits/hero-editorial.jpg"
+                    alt="Elegant beauty portrait"
+                    className="mx-auto max-w-[31rem]"
+                    imageClassName="h-[35rem] w-full object-cover object-center"
+                  />
                 </div>
               </div>
             </div>
