@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import PageHeader from "@/components/PageHeader";
 import Booking from "@/components/sections/Booking";
+import { getActiveServices } from "@/lib/data/services";
 
 export async function generateMetadata({
   params,
@@ -23,11 +24,12 @@ export default async function BookingPage({
   setRequestLocale(locale as Locale);
   const t = await getTranslations({ locale, namespace: "booking" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
+  const services = await getActiveServices(locale as Locale);
 
   return (
     <>
       <PageHeader kicker={tNav("booking")} title={t("title")} subtitle={t("subtitle")} />
-      <Booking showHeading={false} />
+      <Booking showHeading={false} services={services} />
     </>
   );
 }

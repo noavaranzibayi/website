@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/routing";
 import PageHeader from "@/components/PageHeader";
 import Contact from "@/components/sections/Contact";
 import Booking from "@/components/sections/Booking";
+import { getActiveServices } from "@/lib/data/services";
 
 export async function generateMetadata({
   params,
@@ -24,12 +25,13 @@ export default async function ContactPage({
   setRequestLocale(locale as Locale);
   const t = await getTranslations({ locale, namespace: "contact" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
+  const services = await getActiveServices(locale as Locale);
 
   return (
     <>
       <PageHeader kicker={tNav("contact")} title={t("title")} subtitle={t("subtitle")} />
       <Contact />
-      <Booking />
+      <Booking services={services} />
     </>
   );
 }

@@ -6,7 +6,6 @@ import Breadcrumb from "@/components/panel/Breadcrumb";
 import ServicesFilters from "@/components/panel/services/ServicesFilters";
 import ServicesTable from "@/components/panel/services/ServicesTable";
 import Pagination from "@/components/panel/shared/Pagination";
-import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { Plus } from "lucide-react";
 
@@ -42,12 +41,13 @@ export default async function ServicesListView({
           <p className="mt-1 text-sm text-navy-500 dark:text-navy-400">{t("subtitle")}</p>
         </div>
         {canCreate && (
-          <Button variant="gold" size="sm" asChild>
-            <Link href="/panel/admin/services/new">
-              <Plus className="h-4 w-4" />
-              {t("addService")}
-            </Link>
-          </Button>
+          <Link
+            href="/panel/admin/services/new"
+            className="inline-flex h-8 items-center justify-center gap-2 whitespace-nowrap rounded-xl bg-gold-400 px-3 text-xs font-semibold text-navy-900 shadow-sm transition-colors hover:bg-gold-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-gold-200"
+          >
+            <Plus className="h-4 w-4" />
+            {t("addService")}
+          </Link>
         )}
       </div>
 

@@ -7,14 +7,18 @@ import Reveal from "@/components/motion/Reveal";
 import FloatImage from "@/components/motion/FloatImage";
 
 type Status = "idle" | "submitting" | "success" | "error";
+export type BookingServiceOption = { id: string; title: string };
 
-export default function Booking({ showHeading = true }: { showHeading?: boolean } = {}) {
+export default function Booking({
+  showHeading = true,
+  services = [],
+}: {
+  showHeading?: boolean;
+  services?: BookingServiceOption[];
+} = {}) {
   const t = useTranslations("booking");
-  const tServices = useTranslations("services");
   const locale = useLocale();
   const [status, setStatus] = useState<Status>("idle");
-
-  const services = tServices.raw("items") as { id: string; title: string }[];
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();

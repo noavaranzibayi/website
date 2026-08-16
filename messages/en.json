@@ -832,6 +832,7 @@
       "ADMINS": "Admins",
       "ROLES": "Roles & Permissions",
       "APPOINTMENTS": "Appointments",
+      "SERVICES": "Services",
       "NOTIFICATIONS": "Notifications",
       "AUDIT_LOG": "Activity Log",
       "SETTINGS": "Settings"
