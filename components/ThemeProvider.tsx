@@ -4,6 +4,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
   type ReactNode,
 } from "react";
@@ -68,10 +69,13 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, theme);
+  useLayoutEffect(() => {
     applyTheme(theme, systemTheme);
   }, [theme, systemTheme]);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, theme);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider

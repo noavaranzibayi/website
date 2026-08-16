@@ -1,6 +1,6 @@
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import BrandLockup from "@/components/BrandLockup";
+import BrandLogo from "@/components/BrandLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
@@ -32,7 +32,7 @@ export default async function AuthLayout({
 
       <header className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
         <Link href="/">
-          <BrandLockup size="xl" surface="dark" showSubtitle priority />
+          <BrandLogo alt="نوآوران زیبایی" size="xl" surface="dark" priority />
         </Link>
         <div className="flex items-center gap-2">
           <ThemeSwitcher />

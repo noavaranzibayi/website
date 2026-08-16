@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import type { RoleName } from "@/app/generated/prisma/client";
 import type { Locale } from "@/i18n/routing";
-import BrandLockup from "./BrandLockup";
+import BrandLogo from "./BrandLogo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeSwitcher from "./ThemeSwitcher";
 
@@ -33,8 +33,8 @@ export default function Header({
     <header className="sticky top-0 z-50 border-b border-navy-100 bg-white/90 backdrop-blur dark:border-navy-800 dark:bg-navy-950/90">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <Link href="/" className="shrink-0">
-          <BrandLockup size="lg" className="hidden sm:inline-flex" priority />
-          <BrandLockup size="sm" className="sm:hidden" priority />
+          <BrandLogo alt="نوآوران زیبایی" size="xl" className="dark:hidden" priority />
+          <BrandLogo alt="نوآوران زیبایی" size="xl" surface="dark" className="hidden dark:block" priority />
         </Link>
 
         <nav className="hidden items-center gap-1 text-sm font-medium lg:flex">

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import BrandLockup from "@/components/BrandLockup";
+import BrandLogo from "@/components/BrandLogo";
 
 export default function AuthCard({
   title,
@@ -15,8 +15,8 @@ export default function AuthCard({
   return (
     <div className="rounded-3xl border border-navy-100 bg-white p-7 shadow-xl dark:border-navy-800 dark:bg-navy-900 sm:p-9">
       <div className="mb-6 flex flex-col items-center text-center">
-        <BrandLockup size="xxl" showSubtitle className="mb-4 dark:hidden" />
-        <BrandLockup size="xxl" showSubtitle surface="dark" className="mb-4 hidden dark:inline-flex" />
+        <BrandLogo alt="نوآوران زیبایی" size="xxl" className="mb-4 dark:hidden" />
+        <BrandLogo alt="نوآوران زیبایی" size="xxl" surface="dark" className="mb-4 hidden dark:block" />
         <h1 className="text-xl font-extrabold text-navy-800 dark:text-white">{title}</h1>
         {subtitle && <p className="mt-1.5 text-sm text-navy-500 dark:text-navy-400">{subtitle}</p>}
       </div>
