@@ -1,6 +1,7 @@
 import { ChevronLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function PageHeader({
   kicker,
@@ -25,7 +26,7 @@ export default async function PageHeader({
       <div className="absolute -top-16 end-1/4 h-64 w-64 rounded-full bg-gold-400/10 blur-3xl" />
       <div className="absolute -bottom-16 start-1/4 h-64 w-64 rounded-full bg-lime-400/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <Reveal className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <nav className="flex items-center gap-1.5 text-sm text-navy-300">
           <Link href="/" className="transition-colors hover:text-gold-300">
             {t("home")}
@@ -40,7 +41,7 @@ export default async function PageHeader({
         {subtitle && (
           <p className="mt-3 max-w-2xl text-base leading-7 text-navy-200">{subtitle}</p>
         )}
-      </div>
+      </Reveal>
     </section>
   );
 }

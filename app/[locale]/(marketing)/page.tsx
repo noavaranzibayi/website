@@ -4,6 +4,8 @@ import Hero from "@/components/sections/Hero";
 import AboutTeaser from "@/components/sections/AboutTeaser";
 import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
+import Team from "@/components/sections/Team";
+import Faq from "@/components/sections/Faq";
 import CtaBanner from "@/components/sections/CtaBanner";
 import ContactTeaser from "@/components/sections/ContactTeaser";
 
@@ -21,6 +23,8 @@ export default async function HomePage({
       <AboutTeaser />
       <Services limit={8} showViewAll showNote={false} />
       <WhyUs />
+      <Team />
+      <Faq />
       <CtaBanner />
       <ContactTeaser />
     </>

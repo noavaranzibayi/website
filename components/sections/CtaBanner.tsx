@@ -1,6 +1,7 @@
 import { CalendarCheck, ArrowLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function CtaBanner() {
   const t = await getTranslations();
@@ -17,7 +18,7 @@ export default async function CtaBanner() {
       <div className="absolute -top-16 start-1/3 h-64 w-64 rounded-full bg-gold-400/10 blur-3xl" />
       <div className="absolute -bottom-16 end-1/3 h-64 w-64 rounded-full bg-lime-400/10 blur-3xl" />
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 text-center sm:px-6">
+      <Reveal className="relative mx-auto flex max-w-4xl flex-col items-center gap-6 px-4 text-center sm:px-6" y={16}>
         <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-400/15 text-gold-300 ring-1 ring-gold-400/30">
           <CalendarCheck className="h-6 w-6" />
         </span>
@@ -32,7 +33,7 @@ export default async function CtaBanner() {
           {t("common.bookNow")}
           <ArrowLeft className="h-4 w-4 rtl:rotate-0 ltr:rotate-180" />
         </Link>
-      </div>
+      </Reveal>
     </section>
   );
 }

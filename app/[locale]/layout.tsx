@@ -7,6 +7,8 @@ import "../globals.css";
 import { locales, localeDirections, type Locale } from "@/i18n/routing";
 import ThemeProvider from "@/components/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
+import MotionProvider from "@/components/motion/MotionProvider";
+import SiteLoader from "@/components/motion/SiteLoader";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -83,8 +85,11 @@ export default async function LocaleLayout({
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider>
           <NextIntlClientProvider>
-            {children}
-            <Toaster />
+            <MotionProvider>
+              <SiteLoader />
+              {children}
+              <Toaster />
+            </MotionProvider>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

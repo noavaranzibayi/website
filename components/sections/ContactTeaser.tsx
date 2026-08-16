@@ -2,6 +2,7 @@ import { Phone, MapPin, Mail, ArrowLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import InstagramIcon from "@/components/icons/InstagramIcon";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function ContactTeaser() {
   const t = await getTranslations();
@@ -15,7 +16,7 @@ export default async function ContactTeaser() {
 
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-      <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-navy-100 bg-navy-50/50 p-8 dark:border-navy-800 dark:bg-navy-900/40 lg:flex-row lg:items-center">
+      <Reveal className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-navy-100 bg-navy-50/50 p-8 dark:border-navy-800 dark:bg-navy-900/40 lg:flex-row lg:items-center">
         <div>
           <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
             {t("home.contactEyebrow")}
@@ -41,7 +42,7 @@ export default async function ContactTeaser() {
           {t("nav.contact")}
           <ArrowLeft className="h-4 w-4 rtl:rotate-0 ltr:rotate-180" />
         </Link>
-      </div>
+      </Reveal>
     </section>
   );
 }

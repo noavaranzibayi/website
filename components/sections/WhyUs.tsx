@@ -1,6 +1,7 @@
 import { ShieldCheck } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { WHY_US_ICONS } from "@/lib/content-icons";
+import Reveal, { StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 
 type WhyItem = { id: string; title: string; text: string };
 
@@ -11,7 +12,7 @@ export default async function WhyUs({ showHeading = true }: { showHeading?: bool
   return (
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
       {showHeading && (
-        <div className="max-w-2xl">
+        <Reveal className="max-w-2xl">
           <span className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold-500">
             <ShieldCheck className="h-4 w-4" />
             {t("title")}
@@ -19,14 +20,14 @@ export default async function WhyUs({ showHeading = true }: { showHeading?: bool
           <h2 className="mt-2 text-2xl font-extrabold text-navy-800 dark:text-white sm:text-3xl">
             {t("subtitle")}
           </h2>
-        </div>
+        </Reveal>
       )}
 
-      <div className={`grid gap-6 sm:grid-cols-3 ${showHeading ? "mt-10" : ""}`}>
+      <StaggerGroup className={`grid gap-6 sm:grid-cols-3 ${showHeading ? "mt-10" : ""}`}>
         {items.map((item, i) => {
           const Icon = WHY_US_ICONS[item.id] ?? ShieldCheck;
           return (
-            <div
+            <StaggerItem
               key={item.id}
               className="relative overflow-hidden rounded-2xl border border-navy-100 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg dark:border-navy-800 dark:bg-navy-900"
             >
@@ -42,10 +43,10 @@ export default async function WhyUs({ showHeading = true }: { showHeading?: bool
               <p className="relative mt-2 leading-7 text-navy-600 dark:text-navy-300">
                 {item.text}
               </p>
-            </div>
+            </StaggerItem>
           );
         })}
-      </div>
+      </StaggerGroup>
     </section>
   );
 }

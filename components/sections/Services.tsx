@@ -1,7 +1,9 @@
+import Image from "next/image";
 import { Info, Sparkles, ArrowLeft } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { SERVICE_ICONS } from "@/lib/content-icons";
+import { SERVICE_IMAGES } from "@/lib/content-icons";
+import Reveal, { StaggerGroup, StaggerItem } from "@/components/motion/Reveal";
 
 type ServiceItem = { id: string; title: string };
 
@@ -35,7 +37,7 @@ export default async function Services({
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         {showHeading && (
-          <div className="max-w-2xl">
+          <Reveal className="max-w-2xl">
             <span className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-gold-300">
               <Sparkles className="h-4 w-4" />
               {t("title")}
@@ -43,25 +45,40 @@ export default async function Services({
             <h2 className="mt-2 text-2xl font-extrabold text-white sm:text-3xl">
               {t("subtitle")}
             </h2>
-          </div>
+          </Reveal>
         )}
 
-        <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 ${showHeading ? "mt-10" : ""}`}>
+        <StaggerGroup
+          className={`grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 ${showHeading ? "mt-10" : ""}`}
+        >
           {items.map((item) => {
-            const Icon = SERVICE_ICONS[item.id] ?? Sparkles;
+            const image = SERVICE_IMAGES[item.id];
             return (
-              <div
+              <StaggerItem
                 key={item.id}
-                className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center backdrop-blur transition-all hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/[0.08]"
+                className="group flex flex-col items-center gap-2 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] pb-5 text-center backdrop-blur transition-all hover:-translate-y-1 hover:border-gold-400/40 hover:bg-white/[0.08]"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gold-400/15 text-gold-300 ring-1 ring-gold-400/30 transition-colors group-hover:bg-gold-400 group-hover:text-navy-900 group-hover:ring-gold-400">
-                  <Icon className="h-5 w-5" />
-                </span>
+                <div className="relative h-32 w-full sm:h-36">
+                  <div className="absolute inset-x-6 bottom-0 top-3 -z-10 rounded-full bg-gold-400/10 blur-xl transition-colors group-hover:bg-gold-400/20" />
+                  {image ? (
+                    <Image
+                      src={image}
+                      alt={item.title}
+                      width={220}
+                      height={260}
+                      className="h-full w-full object-contain"
+                    />
+                  ) : (
+                    <span className="flex h-full w-full items-center justify-center">
+                      <Sparkles className="h-8 w-8 text-gold-300" />
+                    </span>
+                  )}
+                </div>
                 <span className="text-sm font-semibold text-white">{item.title}</span>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerGroup>
 
         {showViewAll && (
           <div className="mt-8">

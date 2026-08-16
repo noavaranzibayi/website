@@ -2,6 +2,7 @@ import { ArrowLeft, Target, Compass } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import BrandLockup from "@/components/BrandLockup";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function AboutTeaser() {
   const t = await getTranslations();
@@ -9,16 +10,16 @@ export default async function AboutTeaser() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
-        <div className="relative mx-auto w-full max-w-sm lg:mx-0">
+        <Reveal className="relative mx-auto w-full max-w-sm lg:mx-0" y={32}>
           <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-gradient-to-br from-gold-100 via-white to-lime-100 dark:from-navy-900 dark:via-navy-950 dark:to-navy-900" />
           <div className="flex aspect-square items-center justify-center rounded-[2rem] border border-navy-100 bg-white shadow-sm dark:border-navy-800 dark:bg-navy-900">
             <div className="rounded-[2rem] bg-gradient-to-br from-white via-navy-50 to-gold-50 px-8 py-7 shadow-[0_24px_60px_rgba(15,23,42,0.08)] dark:from-navy-900 dark:via-navy-900 dark:to-navy-800">
               <BrandLockup size="lg" showSubtitle className="scale-[1.08]" />
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div>
+        <Reveal delay={0.1}>
           <span className="text-sm font-bold uppercase tracking-wider text-gold-500">
             {t("home.aboutEyebrow")}
           </span>
@@ -47,7 +48,7 @@ export default async function AboutTeaser() {
             {t("common.learnMore")}
             <ArrowLeft className="h-4 w-4 rtl:rotate-0 ltr:rotate-180" />
           </Link>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

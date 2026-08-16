@@ -3,7 +3,8 @@
 import { useState, type FormEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CalendarCheck, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import PortraitPanel from "@/components/sections/PortraitPanel";
+import Reveal from "@/components/motion/Reveal";
+import FloatImage from "@/components/motion/FloatImage";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -65,7 +66,7 @@ export default function Booking({ showHeading = true }: { showHeading?: boolean 
           }`}
         >
           {showHeading && (
-            <div className="text-white">
+            <Reveal className="text-white" y={20}>
               <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-gold-200 ring-1 ring-white/15">
                 <CalendarCheck className="h-4 w-4" />
                 {t("subtitle")}
@@ -74,28 +75,35 @@ export default function Booking({ showHeading = true }: { showHeading?: boolean 
               <p className="mt-4 max-w-lg text-base leading-8 text-navy-100/90">
                 {t("form.success")}
               </p>
-              <div className="mt-8 hidden max-w-md lg:block">
-                <PortraitPanel
-                  src="/portraits/booking-hijab.jpg"
-                  alt="Luxury beauty portrait"
-                  glowClass="from-lime-300/20 via-gold-300/10 to-transparent"
-                  imageClassName="translate-y-4 scale-[1.04]"
-                />
-              </div>
-            </div>
+              <FloatImage
+                className="relative mt-8 hidden max-w-md lg:block"
+                glowClassName="absolute inset-x-10 inset-y-6 -z-10 rounded-full bg-gradient-to-br from-lime-400/20 via-gold-300/10 to-transparent blur-3xl"
+                src="/illustrations/team-booking-coordinator.png"
+                alt={t("title")}
+                width={300}
+                height={400}
+                amplitude={12}
+                duration={4.4}
+              />
+            </Reveal>
           )}
 
           {!showHeading && (
-            <div className="hidden lg:block">
-              <PortraitPanel
-                src="/portraits/booking-hijab.jpg"
-                alt="Luxury beauty portrait"
-                glowClass="from-lime-300/20 via-gold-300/10 to-transparent"
-                imageClassName="translate-y-4 scale-[1.04]"
+            <Reveal className="hidden lg:block" y={20}>
+              <FloatImage
+                className="relative"
+                glowClassName="absolute inset-x-10 inset-y-6 -z-10 rounded-full bg-gradient-to-br from-lime-400/20 via-gold-300/10 to-transparent blur-3xl"
+                src="/illustrations/team-booking-coordinator.png"
+                alt={t("title")}
+                width={300}
+                height={400}
+                amplitude={12}
+                duration={4.4}
               />
-            </div>
+            </Reveal>
           )}
 
+          <Reveal delay={0.1} y={20}>
           <form
             onSubmit={handleSubmit}
             className="grid gap-4 rounded-3xl bg-white p-6 shadow-2xl dark:bg-navy-900 sm:p-8"
@@ -152,6 +160,7 @@ export default function Booking({ showHeading = true }: { showHeading?: boolean 
               </p>
             )}
           </form>
+          </Reveal>
         </div>
       </div>
     </section>

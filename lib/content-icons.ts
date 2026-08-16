@@ -39,3 +39,19 @@ export const WHY_US_ICONS: Record<string, LucideIcon> = {
   innovation: FlaskConical,
   consultation: MessageCircleHeart,
 };
+
+export const SERVICE_IMAGES: Record<string, string> = {
+  "hair-transplant": "/services/hair-transplant.png",
+  carboxytherapy: "/services/carboxytherapy.png",
+  microneedling: "/services/microneedling.png",
+  "lipomatic-abdominal": "/services/lipomatic-abdominal.png",
+  rhinoplasty: "/services/rhinoplasty.png",
+  "hair-beard-transplant": "/services/hair-beard-transplant.png",
+  "skin-rejuvenation": "/services/skin-rejuvenation.png",
+  "weight-loss": "/services/weight-loss.png",
+  mesotherapy: "/services/mesotherapy.png",
+  abdominoplasty: "/services/abdominoplasty.png",
+  laser: "/services/laser.png",
+  "cosmetic-surgery": "/services/cosmetic-surgery.png",
+  "face-lift": "/services/face-lift.png",
+};

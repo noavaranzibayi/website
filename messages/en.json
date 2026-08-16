@@ -25,28 +25,82 @@
     ],
     "slides": [
       {
-        "id": "brand",
-        "tag": "Noavaran Zibayi",
-        "title": "Natural beauty, through a scientific approach and precise care",
-        "subtitle": "Noavaran Zibayi focuses on enhancing your appearance and beauty, offering the best solutions and modern methods for your care."
+        "id": "hair-transplant",
+        "tag": "Hair Transplant",
+        "title": "Natural Hair Transplant With Lasting, Believable Results",
+        "subtitle": "Achieve a natural hairline and the density you want with advanced transplant techniques — we're with you from consultation through aftercare."
       },
       {
-        "id": "skin",
-        "tag": "Skin",
-        "title": "Skin rejuvenation and radiance with world-class methods",
-        "subtitle": "Specialized skin care with advanced equipment and a treatment plan tailored to every individual."
+        "id": "carboxytherapy",
+        "tag": "Carboxytherapy",
+        "title": "Carboxytherapy — the Secret to Radiant, Energized Skin",
+        "subtitle": "Controlled CO2 injections stimulate skin circulation, leaving your complexion brighter and more youthful."
       },
       {
-        "id": "hair",
-        "tag": "Hair",
-        "title": "Natural hair transplants with lasting results",
-        "subtitle": "Our expert hair and beard transplant team is with you from the first consultation through aftercare."
+        "id": "microneedling",
+        "tag": "Microneedling",
+        "title": "Microneedling for Smooth, Even Skin",
+        "subtitle": "By triggering the skin's natural collagen production, we minimize enlarged pores, acne scars, and fine lines."
+      },
+      {
+        "id": "lipomatic-abdominal",
+        "tag": "Liposmatic & Abdominal Procedures",
+        "title": "Body Contouring With Liposmatic & Abdominal Surgery",
+        "subtitle": "Remove stubborn localized fat safely and with minimal invasiveness to achieve a more balanced silhouette."
+      },
+      {
+        "id": "rhinoplasty",
+        "tag": "Rhinoplasty",
+        "title": "Rhinoplasty, in Harmony With Your Face",
+        "subtitle": "A nose design tailored to your facial structure, performed by an experienced cosmetic surgery team."
+      },
+      {
+        "id": "hair-beard-transplant",
+        "tag": "Hair & Beard Transplant",
+        "title": "Hair & Beard Transplant for a Cohesive, Masculine Look",
+        "subtitle": "Experience natural density and lasting results with today's hair and beard transplant techniques."
+      },
+      {
+        "id": "skin-rejuvenation",
+        "tag": "Skin Rejuvenation",
+        "title": "Skin Rejuvenation With the Latest Global Methods",
+        "subtitle": "Reduce wrinkles and sagging, and restore the glow and freshness of youthful skin."
+      },
+      {
+        "id": "weight-loss",
+        "tag": "Weight Loss",
+        "title": "Targeted & General Weight Loss, Done Right",
+        "subtitle": "Reach your ideal body shape with specialized weight-loss programs built to last."
+      },
+      {
+        "id": "mesotherapy",
+        "tag": "Mesotherapy",
+        "title": "Mesotherapy — Deep Nourishment for Skin & Hair",
+        "subtitle": "Micronutrient injections into the skin's deeper layers boost the health and radiance of your skin and hair."
+      },
+      {
+        "id": "abdominoplasty",
+        "tag": "Abdominoplasty",
+        "title": "Abdominoplasty for a Flat, Firm Stomach",
+        "subtitle": "Correct excess skin and loosened abdominal muscles with specialized surgery."
       },
       {
         "id": "laser",
         "tag": "Laser",
-        "title": "Laser treatments and body contouring, done safely",
-        "subtitle": "Hair removal and targeted fat reduction with the latest devices and a trained clinical team."
+        "title": "Laser Hair Removal — Lasting and Pain-Free",
+        "subtitle": "With state-of-the-art laser devices, enjoy smooth, hair-free skin for the long term."
+      },
+      {
+        "id": "cosmetic-surgery",
+        "tag": "Cosmetic Surgery",
+        "title": "Cosmetic Surgery to International Standards",
+        "subtitle": "Our experienced surgical team performs a full range of cosmetic procedures with precision and safety."
+      },
+      {
+        "id": "face-lift",
+        "tag": "Face Lift",
+        "title": "Face Lift — a Youthful Look Without Heavy Surgery",
+        "subtitle": "Correct facial sagging and enjoy a fresher, more lifted appearance."
       }
     ]
   },
@@ -139,6 +193,58 @@
         "id": "consultation",
         "title": "Transparent Consultation",
         "text": "Clear explanation of the treatment path, realistic expectations, and step-by-step support."
+      }
+    ]
+  },
+  "team": {
+    "title": "Our Specialist Team",
+    "subtitle": "With you at every step of your beauty journey",
+    "items": [
+      {
+        "id": "beauty-consultant",
+        "title": "Beauty Consultant",
+        "text": "Reviews your needs and recommends the right treatment path."
+      },
+      {
+        "id": "booking-coordinator",
+        "title": "Booking Coordinator",
+        "text": "Schedules appointments and coordinates with the care team."
+      },
+      {
+        "id": "technical-specialist",
+        "title": "Technical Specialist",
+        "text": "Delivers services precisely using the latest equipment."
+      },
+      {
+        "id": "customer-support",
+        "title": "Customer Support",
+        "text": "Answers your questions before and after treatment."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to common questions from our clients",
+    "items": [
+      {
+        "q": "How do I book an appointment?",
+        "a": "You can book a consultation or a specific service through our booking page or by calling us directly."
+      },
+      {
+        "q": "Do I need a consultation before every service?",
+        "a": "Yes, we recommend a consultation first so we can design the right treatment plan for you."
+      },
+      {
+        "q": "How much do the services cost?",
+        "a": "Pricing depends on the service and your specific needs, and is explained clearly during your consultation."
+      },
+      {
+        "q": "What aftercare is needed following treatment?",
+        "a": "Our team provides a personalized aftercare guide and follows up on your recovery."
+      },
+      {
+        "q": "Can I reschedule or cancel my appointment?",
+        "a": "Yes, just contact us before your appointment time and we'll reschedule or cancel it for you."
       }
     ]
   },

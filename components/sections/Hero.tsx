@@ -1,39 +1,22 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Sparkles, Droplets, Scissors, Zap, Check } from "lucide-react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Sparkles, Check } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { LucideIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import PortraitPanel from "@/components/sections/PortraitPanel";
+import { SERVICE_ICONS, SERVICE_IMAGES } from "@/lib/content-icons";
 
 type Slide = { id: string; tag: string; title: string; subtitle: string };
 
-const SLIDE_THEME: Record<
-  string,
-  { icon: LucideIcon; gradient: string; glow: string }
-> = {
-  brand: {
-    icon: Sparkles,
-    gradient: "from-navy-800 via-navy-700 to-navy-900",
-    glow: "from-gold-400/30 to-transparent",
-  },
-  skin: {
-    icon: Droplets,
-    gradient: "from-navy-900 via-[#3a2a52] to-navy-800",
-    glow: "from-lime-400/25 to-transparent",
-  },
-  hair: {
-    icon: Scissors,
-    gradient: "from-navy-900 via-[#54371f] to-navy-800",
-    glow: "from-gold-400/30 to-transparent",
-  },
-  laser: {
-    icon: Zap,
-    gradient: "from-navy-950 via-navy-800 to-[#123a4a]",
-    glow: "from-lime-400/25 to-transparent",
-  },
-};
+const GRADIENTS: { gradient: string; glow: string }[] = [
+  { gradient: "from-navy-800 via-navy-700 to-navy-900", glow: "from-gold-400/30 to-transparent" },
+  { gradient: "from-navy-900 via-[#3a2a52] to-navy-800", glow: "from-lime-400/25 to-transparent" },
+  { gradient: "from-navy-900 via-[#54371f] to-navy-800", glow: "from-gold-400/30 to-transparent" },
+  { gradient: "from-navy-950 via-navy-800 to-[#123a4a]", glow: "from-lime-400/25 to-transparent" },
+  { gradient: "from-navy-900 via-[#3f2a2a] to-navy-950", glow: "from-gold-400/25 to-transparent" },
+  { gradient: "from-navy-950 via-[#1f3a2e] to-navy-900", glow: "from-lime-400/30 to-transparent" },
+];
 
 const AUTOPLAY_MS = 6000;
 
@@ -69,10 +52,11 @@ export default function Hero() {
       onMouseLeave={() => setPaused(false)}
       className="relative isolate overflow-hidden"
     >
-      <div className="relative h-[560px] sm:h-[620px] lg:h-[680px]">
+      <div className="relative h-[600px] sm:h-[660px] lg:h-[720px]">
         {slides.map((slide, i) => {
-          const theme = SLIDE_THEME[slide.id] ?? SLIDE_THEME.brand;
-          const Icon = theme.icon;
+          const theme = GRADIENTS[i % GRADIENTS.length];
+          const Icon = SERVICE_ICONS[slide.id] ?? Sparkles;
+          const image = SERVICE_IMAGES[slide.id];
           const active = i === index;
           return (
             <div
@@ -130,16 +114,23 @@ export default function Hero() {
                 </div>
 
                 <div
-                  className={`relative hidden transition-all duration-700 ease-out lg:block ${
+                  className={`relative hidden h-full items-center justify-center transition-all duration-700 ease-out lg:flex ${
                     active ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                   }`}
                 >
-                  <PortraitPanel
-                    src="/portraits/hero-editorial.jpg"
-                    alt="Elegant beauty portrait"
-                    className="mx-auto max-w-[31rem]"
-                    imageClassName="h-[35rem] w-full object-cover object-center"
+                  <div
+                    className={`absolute inset-x-10 inset-y-16 -z-10 rounded-full bg-gradient-to-br ${theme.glow} blur-3xl`}
                   />
+                  {image && (
+                    <Image
+                      src={image}
+                      alt={slide.tag}
+                      width={520}
+                      height={640}
+                      priority={i === 0}
+                      className="h-[30rem] w-auto object-contain drop-shadow-2xl sm:h-[34rem]"
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -169,30 +160,32 @@ export default function Hero() {
         </button>
 
         {/* Dots */}
-        <div className="absolute inset-x-0 bottom-6 z-20 flex items-center justify-center gap-2">
-          {slides.map((slide, i) => (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={() => goTo(i)}
-              aria-label={slide.tag}
-              aria-current={i === index}
-              className="group relative h-1.5 w-8 overflow-hidden rounded-full bg-white/25"
-            >
-              {i === index && (
-                <span
-                  key={`${slide.id}-${paused}`}
-                  className="absolute inset-y-0 start-0 rounded-full bg-gold-400"
-                  style={{
-                    animation: paused
-                      ? undefined
-                      : `hero-progress ${AUTOPLAY_MS}ms linear forwards`,
-                    width: paused ? "100%" : undefined,
-                  }}
-                />
-              )}
-            </button>
-          ))}
+        <div className="absolute inset-x-0 bottom-6 z-20 overflow-x-auto px-4">
+          <div className="flex w-max min-w-full items-center justify-center gap-1.5">
+            {slides.map((slide, i) => (
+              <button
+                key={slide.id}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={slide.tag}
+                aria-current={i === index}
+                className="group relative h-1.5 w-5 shrink-0 overflow-hidden rounded-full bg-white/25 sm:w-7"
+              >
+                {i === index && (
+                  <span
+                    key={`${slide.id}-${paused}`}
+                    className="absolute inset-y-0 start-0 rounded-full bg-gold-400"
+                    style={{
+                      animation: paused
+                        ? undefined
+                        : `hero-progress ${AUTOPLAY_MS}ms linear forwards`,
+                      width: paused ? "100%" : undefined,
+                    }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
